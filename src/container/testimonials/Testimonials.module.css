@@ -1,0 +1,74 @@
+.container {
+  padding: 5rem;
+  background: var(--);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 98vw;
+}
+
+.testimonial_card {
+  min-height: 400px;
+  width: 350px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  margin: 4rem;
+}
+
+.text {
+  padding: 2.2em;
+  line-height: 1.7em;
+  position: relative;
+  font-size: 18px;
+}
+.image img {
+  background-color: tomato;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  border: 5px solid white;
+  background: no-repeat center/cover;
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+}
+
+.footer {
+  background: var(--gradient-text);
+  height: 140px;
+  border-radius: 0 0 10px 10px;
+  position: relative;
+}
+
+.quote {
+  font-size: 400%;
+  float: right;
+  opacity: 0.1;
+  transform: rotate(10deg) translate(-10px, -40px);
+  color: #4d3fa3;
+}
+
+.person {
+  color: white;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  font-size: 3rem;
+  font-weight: 600;
+}

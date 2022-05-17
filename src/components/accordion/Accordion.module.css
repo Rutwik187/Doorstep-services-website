@@ -1,0 +1,86 @@
+.AccordionSection {
+  background-color: var(--container-bg-color);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: row;
+  padding: 5rem;
+  width: 80vw;
+  margin: auto;
+}
+
+.Accordion_Container {
+  margin: 5rem;
+}
+
+.AccordionSection_header h2 {
+  font-size: 4rem;
+  margin-bottom: 4rem;
+}
+
+.Accordion_FAQs {
+  width: 70%;
+}
+
+.Wrap {
+  background: #fff;
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  cursor: pointer;
+  margin: 1.5rem;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+}
+
+.Question {
+  padding: 1rem;
+  display: flex;
+  width: 95%;
+  justify-content: space-between;
+}
+
+.Wrap span {
+  margin-right: 1.5rem;
+}
+
+.Dropdown {
+  padding: 1rem;
+  background: #fff;
+  color: var(--primary-color);
+  width: 95%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.Dropdown p {
+  text-align: left;
+  font-size: 2rem;
+}
+.Question h5 {
+  text-align: left;
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 3rem;
+  padding-bottom: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+  .AccordionSection {
+    width: 90vw;
+    flex-direction: column;
+  }
+  .AccordionSection_header h2 {
+    margin-bottom: 3rem;
+  }
+  .Accordion_FAQs {
+    width: 100%;
+  }
+  .AccordionSection_header button {
+    display: none;
+  }
+}

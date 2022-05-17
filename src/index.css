@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --font-family: Roboto, "Manrope", sans-serif;
+
+  --gradient-text: linear-gradient(53.94deg, #373fff 15.02%, #3acaf8 82.83%);
+  --gradient-radial: radial-gradient(
+    483.9% 2719.65% at -49.5% -250%,
+    #d798e1 17.55%,
+    #9bffa5 27.56%,
+    #aed3ff 49.89%,
+    #c9d4ef 56.53%,
+    #cacffa 65.69%
+  );
+
+  --primary-color: #1d2130;
+  --container-bg-color: #e0e4fc;
+  --icon-color: #6b7cff;
+
+  --color-bg: #040c18;
+  --color-footer: #031b34;
+  --color-blog: #042c54;
+  --color-text: #81afdd;
+  --color-subtext: #ff8a71;
+  --box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  --secondry-box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  --border-radius: 6px;
+}
