@@ -4,7 +4,6 @@
   flex-direction: column;
 }
 .services_container_title h2,
-
 h5 {
   text-align: center;
 }
@@ -37,7 +36,7 @@ h5 {
   object-fit: cover;
   transition: 0.5s;
 }
-.services_container_content_item_lable {
+.services_container_content_item_label {
   position: absolute;
   display: flex;
   align-items: center;
@@ -49,11 +48,11 @@ h5 {
   opacity: 0;
   transition: 0.5s;
 }
-.services_container_content_item:hover .services_container_content_item_lable {
+.services_container_content_item:hover .services_container_content_item_label {
   opacity: 1;
 }
 
-.services_container_content_item_lable p {
+.services_container_content_item_label p {
   font-size: 1.5rem;
 }
 

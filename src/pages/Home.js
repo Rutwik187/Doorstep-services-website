@@ -1,19 +1,24 @@
+import React from 'react';
+
 import { Feature } from '../container/features/Feature';
 import { Header } from '../container/header/Header';
-import { Services } from '../container/services/Services';
+import { PopularServices } from '../container/popular-services/PopularServices';
 import { Steps } from '../container/steps/Steps';
 import { Testimonials } from '../container/testimonials/Testimonials';
 import { CTA } from '../components/cta/CTA';
+// import { Test } from '../container/Test';
 
 export const Home = () => {
   return (
     <>
+      {/* <Test /> */}
       <Header />
       <Feature />
-      <Services />
+      <PopularServices />
       <Steps />
       <Testimonials />
       <CTA />
+
     </>
   )
 }

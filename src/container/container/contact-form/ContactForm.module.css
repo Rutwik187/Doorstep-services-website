@@ -1,0 +1,193 @@
+.background {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+.app_form_group input {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+.background {
+  display: flex;
+  margin-top: 5rem;
+  margin-bottom: 10rem;
+}
+
+.container {
+  flex: 0 1 700px;
+  margin: auto;
+  padding: 10px;
+}
+
+.screen {
+  position: relative;
+  background: var(--container-bg-color);
+  border-radius: 15px;
+}
+
+.screen:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  bottom: 0;
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  z-index: -1;
+}
+
+.screen_header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: #042c54;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.screen_header_left {
+  margin-right: auto;
+}
+
+.screen_header_button {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 3px;
+  border-radius: 8px;
+  background: white;
+}
+
+.screen_header_button.close {
+  background: #ed1c6f;
+}
+
+.screen_header_button.maximize {
+  background: #e8e925;
+}
+
+.screen_header_button.minimize {
+  background: #74c54f;
+}
+
+.screen_header_right {
+  display: flex;
+}
+
+.screen_header_ellipsis {
+  width: 3px;
+  height: 3px;
+  margin-left: 2px;
+  border-radius: 8px;
+  background: #999;
+}
+
+.screen_body {
+  display: flex;
+}
+
+.screen_body_item {
+  flex: 1;
+  padding: 50px;
+}
+
+.screen_body_item.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.app_title {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: var(--primary-color);
+  font-size: 26px;
+}
+
+.app_title:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 25px;
+  height: 4px;
+  background: var(--gradient-text);
+}
+
+.app_contact {
+  margin-top: auto;
+  font-size: 10px;
+  color: var(--primary-color);
+}
+
+.app_form_group.message {
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+.app_form_group.buttons {
+  margin-bottom: 0;
+  text-align: right;
+}
+
+.app_form_control {
+  width: 100%;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #666;
+  color: var(--primary-color);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.app_form_control::placeholder {
+  color: #666;
+}
+
+.app_form_control:focus {
+  border-bottom-color: #81afdd;
+}
+
+.button {
+  padding: 1rem;
+  font-size: 15px;
+}
+
+@media screen and (max-width: 520px) {
+  .screen_body {
+    flex-direction: column;
+  }
+
+  .screen_body_item.left {
+    margin-bottom: 30px;
+  }
+
+  .app_title {
+    flex-direction: row;
+  }
+
+  .app_title span {
+    margin_right: 12px;
+  }
+
+  .app_title:after {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .screen_body {
+    padding: 40px;
+  }
+
+  .screen_body_item {
+    padding: 0;
+  }
+}

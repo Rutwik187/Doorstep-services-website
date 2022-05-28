@@ -15,9 +15,6 @@ export const Footer = () => {
                 <a href="#">Home</a>
               </li>
               <li>
-                <a href="#">our services</a>
-              </li>
-              <li>
                 <a href="#">Register as a Professional</a>
               </li>
               <li>
@@ -49,10 +46,22 @@ export const Footer = () => {
                 <a href="#">Electrician</a>
               </li>
               <li>
-                <a href="#">Plumbing</a>
+                <a href="#">Event Management</a>
               </li>
               <li>
-                <a href="#">Photography</a>
+                <a href="#">Appliance Repair</a>
+              </li>
+              <li>
+                <a href="#">House Cleaning</a>
+              </li>
+              <li>
+                <a href="#">Online Instructor</a>
+              </li>
+              <li>
+                <a href="#">Taxes</a>
+              </li>
+              <li>
+                <a href="#">Plumbing</a>
               </li>
             </ul>
           </div>

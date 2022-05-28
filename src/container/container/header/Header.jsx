@@ -8,6 +8,10 @@ import { Test } from "../Test";
 export const Header = () => {
   const [show, setShow] = useState(false);
 
+  const showModelOnClickHandler = () => {
+    setShow(!show);
+  };
+
   return (
     <div className={headerStyles.container}>
       <div className={headerStyles.title}>
@@ -37,14 +41,14 @@ export const Header = () => {
         <div className={headerStyles.catagories_container}>
           {Catagories.map((item) => (
             <div
-              onClick={() => setShow(true)}
+              onClick={showModelOnClickHandler}
               className={headerStyles.catagories_container_item}
             >
               <img src={item.img} key={item.id} alt={item.desc} />
               <p>{item.desc}</p>
             </div>
           ))}
-          <Test showModal={show} closeModal={() => setShow(false)} />
+          {show ? <Test /> : null}
         </div>
       </div>
     </div>

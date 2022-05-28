@@ -1,28 +1,30 @@
-import airconditioner from "./assets/icons/air-conditioner.png";
+import air_conditioner from "./assets/icons/air-conditioner.png";
 import electrician from "./assets/icons/electrician.png";
 import plumbing from "./assets/icons/plumbing.png";
 import houseCleaning from "./assets/icons/houseCleaning.png";
 import suitcase from "./assets/icons/suitcase.png";
 import photographer from "./assets/icons/photographer.png";
 import makeover from "./assets/icons/makeover.png";
+import instructor from "./assets/icons/instructor.png";
 
-import shield from "./assets/icons/user-shield-solid.svg";
-import headphone from "./assets/icons/headphones-simple-solid.svg";
-import thumbsUp from "./assets/icons/thumbs-up-solid.svg";
+import shield from "./assets/icons/quality-badge.svg";
+import headphone from "./assets/icons/thumbs-up.svg";
+import thumbsUp from "./assets/icons/handshake.svg";
 
 import beauty_img from "./assets/Images/Beauty-makeover.jpg";
 import electrician_img from "./assets/Images/Electrician.jpg";
 import photographer_img from "./assets/Images/photographer.jpg";
-import fitness_tranier_img from "./assets/Images/fitness-trainer.jpg";
+import fitness_trainer_img from "./assets/Images/fitness-trainer.jpg";
 import house_cleaning_img from "./assets/Images/House-cleaning.jpg";
 import haircut_img from "./assets/Images/Haircut.jpg";
 
 
-export const primeServiceIcons = [
+export const Catagories = [
     {
         id: 1,
-        img: airconditioner,
-        desc: 'Applence Repair',
+        img: air_conditioner,
+        desc: 'Appliance  Repair',
+
     },
     {
         id: 2,
@@ -46,38 +48,62 @@ export const primeServiceIcons = [
     },
     {
         id: 6,
-        img: photographer,
-        desc: 'Photography',
+        img: makeover,
+        desc: 'Beauty and Spa',
     },
     {
         id: 7,
-        img: makeover,
-        desc: 'Beauty and Spa',
+        img: instructor,
+        desc: 'Online Instructor',
+    },
+    {
+        id: 8,
+        img: photographer,
+        desc: 'Manage Events',
     }
 ]
 
-export const featureItems = [
-    {
-        id: 1,
-        icon: shield,
-        title: 'High security to protect from Scams',
-        desc: 'We have a high level of security to protect you from scams and fraud.'
-    },
-    {
-        id: 2,
-        icon: thumbsUp,
-        title: 'Premium quality performance',
-        desc: 'We have a high level of security to protect you from scams and fraud.'
-    },
-    {
-        id: 3,
-        icon: headphone,
-        title: 'Full time customer support - 24/7',
-        desc: 'We have a high level of security to protect you from scams and fraud.'
-    }
+export const Services = [
+    [
+        {
+            id: 1,
+            disc: 'Air Conditioner',
+        },
+        {
+            id: 2,
+            disc: 'Gas Stove',
+        },
+        {
+            id: 3,
+            disc: 'Refrigerator',
+        },
+        {
+            id: 4,
+            disc: 'Washing Machine',
+        }
+    ],
+    [
+        {
+            id: 1,
+            disc: 'Air Conditioner',
+        },
+        {
+            id: 2,
+            disc: 'Gas Stove',
+        },
+        {
+            id: 3,
+            disc: 'Refrigerator',
+        },
+        {
+            id: 4,
+            disc: 'Washing Machine',
+        }
+    ]
+
 ]
 
-export const services = [
+export const popularServices = [
     {
         id: 1,
         title: ' Beauty and Spa',
@@ -85,49 +111,69 @@ export const services = [
     },
     {
         id: 2,
-        title: 'Applence Repair',
+        title: 'Appliance Repair',
         image: electrician_img
     },
     {
         id: 3,
-        title: ' Beauty and Spa',
+        title: 'Photography',
         image: photographer_img
     },
     {
         id: 4,
-        title: ' Beauty and Spa',
-        image: fitness_tranier_img
+        title: 'Fitness Trainer',
+        image: fitness_trainer_img
     },
     {
         id: 5,
-        title: ' Beauty and Spa',
+        title: ' House Cleaning',
         image: house_cleaning_img
     },
     {
         id: 6,
-        title: ' Beauty and Spa',
+        title: ' Salon and Haircut',
         image: haircut_img
     }
 
 ]
 
+export const featureItems = [
+    {
+        id: 1,
+        icon: shield,
+        title: 'High Quality & Trusted Professionals',
+        desc: 'We provide only verified, background checked and high quality professionals.'
+    },
+    {
+        id: 2,
+        icon: thumbsUp,
+        title: 'Matched to Your Needs',
+        desc: 'We match you with the right professionals with the right budget.'
+    },
+    {
+        id: 3,
+        icon: headphone,
+        title: 'Hassle Free Service Delivery',
+        desc: 'Super convenient, guaranteed service from booking to delivery.'
+    }
+]
+
 export const testimonials = [
     {
         id: 1,
-        name: 'John Doe',
+        name: 'Pratham',
         comment: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam iste quidem velit! Ratione similique reiciendis, dicta totam sed.',
         avatar: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
     },
     {
         id: 2,
-        name: 'John Doe',
-        designation: 'Web Developer',
+        name: 'Prashant',
         comment: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam iste quidem velit! Ratione similique reiciendis, dicta totam sed.',
         avatar: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
     },
     {
         id: 3,
-        name: 'John Doe',
+        name: 'Yash',
         comment: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam iste quidem velit! Ratione similique reiciendis, dicta totam sed.',
         avatar: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
     }
@@ -136,21 +182,25 @@ export const testimonials = [
 export const stepsData = [
     {
         id: 1,
+        animation: 'fade-left',
         text: 'Check if we offer services in your area by entering city name',
         step_no: 'Step 1',
     },
     {
         id: 2,
+        animation: 'fade-right',
         text: 'Let us know what needs to be fixed and check for the service availability',
         step_no: 'Step 2',
     },
     {
         id: 3,
+        animation: 'fade-left',
         text: 'You can talk to the fixer you wish to work with & setup time',
         step_no: 'Step 3',
     },
     {
         id: 4,
+        animation: 'fade-right',
         text:
             'Fixer arrives site. You will be astonished the work they can do for you',
         step_no: 'Step 4',
@@ -158,6 +208,7 @@ export const stepsData = [
     },
     {
         id: 5,
+        animation: 'fade-left',
         text: 'We will send you the link to pay. You can pay via paypal or card',
         step_no: 'Step 5',
     }
