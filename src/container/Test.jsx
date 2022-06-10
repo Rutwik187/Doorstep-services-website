@@ -1,4 +1,5 @@
 import "./test.css";
+import { Services } from "../data";
 import React from "react";
 import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
@@ -7,8 +8,6 @@ import Fade from "@mui/material/Fade";
 import Button from "@mui/material/Button";
 import { RiArrowRightSLine } from "react-icons/ri";
 import { GrClose } from "react-icons/gr";
-
-// import { Data } from "../data";
 
 export const Test = (props) => {
   return (
@@ -25,35 +24,19 @@ export const Test = (props) => {
         }}
       >
         <Fade in={props.showModal}>
-          <Box class="services_container">
-            <div class="items">
-              <div class="items-head">
-                <p>Appliance repair</p>
+          <Box className="services_container">
+            <div className="items">
+              <div className="items-head">
+                <p>toto</p>
                 <Button onClick={props.closeModal}>
                   <GrClose size={15} fill="#6b7cff" />
                 </Button>
               </div>
               <hr />
-
-              <div class="items-body">
-                <div class="items-body-content">
-                  <span>Web Usability Testing</span>
+              <div className="items-body">
+                <div className="items-body-content">
+                  <span>{props.callOnClick}</span>
                   <RiArrowRightSLine />
-                </div>
-                <div class="items-body-content">
-                  <span>Design of Everyday Things</span>
-                  <i class="fa fa-angle-right"></i>
-                </div>
-                <div class="items-body-content">
-                  <span>
-                    Practical Empathy: For Collaboration & Creativity in Your
-                    Work
-                  </span>
-                  <i class="fa fa-angle-right"></i>
-                </div>
-                <div class="items-body-content">
-                  <span>About Face: The Essentials of Interaction Design</span>
-                  <i class="fa fa-angle-right"></i>
                 </div>
               </div>
             </div>

@@ -18,7 +18,7 @@ export const Navbar = () => {
             <Link to="/">Home</Link>
           </p>
           <p>
-            <Link to="/Services">Services</Link>
+            <Link to="/Categories">Categories</Link>
           </p>
           <p>
             <Link to="/RegisterAsProfessional">Register As Professional</Link>
@@ -55,7 +55,7 @@ export const Navbar = () => {
                 <Link to="/">Home</Link>
               </p>
               <p>
-                <Link to="/Services">Services</Link>
+                <Link to="/Categories">Categories</Link>
               </p>
               <p>
                 <Link to="/RegisterAsProfessional">

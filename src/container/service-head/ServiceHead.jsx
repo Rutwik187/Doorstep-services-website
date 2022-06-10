@@ -1,21 +1,17 @@
 import ServiceHeadStyles from "./ServiceHead.module.css";
-import HouseCleaning from "../../assets/Images/House-cleaning.jpg";
+// import HouseCleaning from "../../assets/Images/House-cleaning.jpg";
 import React from "react";
 
-export const ServiceHead = () => {
+export const ServiceHead = (props) => {
   return (
     <>
       <div className={ServiceHeadStyles.serviceHead_container}>
         <div className={ServiceHeadStyles.serviceHead_container_text}>
-          <h2>Home Cleaning Services</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua.
-          </p>
+          <h2>{props.title}</h2>
+          <p>{props.service_desc}</p>
         </div>
         <div className={ServiceHeadStyles.serviceHead_container_image}>
-          <img src={HouseCleaning} alt="service_img" />
+          <img src={props.img} alt="service_img" />
         </div>
       </div>
       <div className={ServiceHeadStyles.serviceHead_container_button}>

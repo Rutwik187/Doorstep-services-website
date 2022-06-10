@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import headerStyles from "./Header.module.css";
 import { GoLocation, GoSearch } from "react-icons/go";
-import { Catagories } from "../../data";
-// import { Services } from "../../data";
+import { categoriesData } from "../../data";
 import { Test } from "../Test";
 
 export const Header = () => {
   const [show, setShow] = useState(false);
+
+  const onclickHandler = (item) => {
+    setShow(true);
+  };
 
   return (
     <div className={headerStyles.container}>
@@ -32,15 +35,16 @@ export const Header = () => {
         </div>
       </div>
 
-      <div className={headerStyles.catagories}>
-        <h3>Catagories</h3>
-        <div className={headerStyles.catagories_container}>
-          {Catagories.map((item) => (
+      <div className={headerStyles.categories}>
+        <h3>Categories</h3>
+        <div className={headerStyles.categories_container}>
+          {categoriesData.map((item) => (
             <div
-              onClick={() => setShow(true)}
-              className={headerStyles.catagories_container_item}
+              category-id={item.id}
+              onClick={() => onclickHandler(item)}
+              className={headerStyles.categories_container_item}
             >
-              <img src={item.img} key={item.id} alt={item.desc} />
+              <img src={item.icon_img} alt={item.desc} />
               <p>{item.desc}</p>
             </div>
           ))}
