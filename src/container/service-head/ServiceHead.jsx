@@ -1,5 +1,4 @@
 import ServiceHeadStyles from "./ServiceHead.module.css";
-// import HouseCleaning from "../../assets/Images/House-cleaning.jpg";
 import React from "react";
 
 export const ServiceHead = (props) => {

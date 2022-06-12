@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import headerStyles from "./Header.module.css";
 import { GoLocation, GoSearch } from "react-icons/go";
 import { categoriesData } from "../../data";
-import { Test } from "../Test";
+import { Link } from "react-router-dom";
+// import { Test } from "../Test";
 
 export const Header = () => {
-  const [show, setShow] = useState(false);
+  // const [show, setShow] = useState(false);
 
-  const onclickHandler = (item) => {
-    setShow(true);
-  };
+  // const onclickHandler = (item) => {
+  //   setShow(true);
+  // };
 
   return (
     <div className={headerStyles.container}>
@@ -37,18 +38,21 @@ export const Header = () => {
 
       <div className={headerStyles.categories}>
         <h3>Categories</h3>
+
         <div className={headerStyles.categories_container}>
           {categoriesData.map((item) => (
-            <div
-              category-id={item.id}
-              onClick={() => onclickHandler(item)}
-              className={headerStyles.categories_container_item}
-            >
-              <img src={item.icon_img} alt={item.desc} />
-              <p>{item.desc}</p>
-            </div>
+            <Link to={"/categories/" + item.id}>
+              <div
+                category-id={item.id}
+                // onClick={() => onclickHandler(item)}
+                className={headerStyles.categories_container_item}
+              >
+                <img src={item.icon_img} alt={item.desc} />
+                <p>{item.desc}</p>
+              </div>
+            </Link>
           ))}
-          <Test showModal={show} closeModal={() => setShow(false)} />
+          {/* <Test showModal={show} closeModal={() => setShow(false)} /> */}
         </div>
       </div>
     </div>

@@ -166,270 +166,424 @@ export const featureItems = [
 
 export const popularServices = [
     {
-        id: 1,
+        id: 'beauty_and_spa',
         desc: 'Beauty and Spa',
-        img: makeup_and_face_care
+        img: makeup_and_face_care,
+        category: 'makeup_artist'
     },
     {
-        id: 2,
+        id: 'switchboard',
         desc: 'Switch Board Repair',
-        img: switchboard
+        img: switchboard,
+        category: 'electrician'
     },
     {
-        id: 3,
+        id: 'photography',
         desc: 'Photography',
-        img: photography
+        img: photography,
+        category: 'event_management'
     },
     {
-        id: 4,
+        id: 'fitness_and_gym',
         desc: 'Fitness',
-        img: fitness_and_gym
+        img: fitness_and_gym,
+        category: 'online_instructor'
     },
     {
-        id: 5,
+        id: 'tax_planning',
         desc: ' Tax Planning',
-        img: tax_planning
+        img: tax_planning,
+        category: 'business'
     },
     {
-        id: 6,
+        id: 'carpet_cleaning',
         desc: 'Carpet Cleaning',
-        img: carpet_cleaning
+        img: carpet_cleaning,
+        category: 'house_cleaning'
     }
 
 ]
-
 export const services_appliance_repair = [
     {
         id: "ac_repair",
         desc: 'Air Conditioner',
+        img: ac_repair,
         checkout_desc: 'We are here to tend to the world class AC repairing services to our costumers no matter what it takes. Thanks for Trusting us.',
-        img: ac_repair
+        category: 'appliance_repair'
     },
 
     {
         id: "microwave_repair",
         desc: 'Microwave and Oven',
-        img: microwave_repair
+        img: microwave_repair,
+        checkout_desc: 'We are here to tend to the world class Microwave repairing services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'appliance_repair'
+
     },
     {
         id: "mixer_grinder_repair",
         desc: 'Mixer Grinder',
         img: mixer_grinder_repair,
+        checkout_desc: 'We are here to tend to the world class Mixer and Grinder repairing services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'appliance_repair'
     },
     {
         id: "refrigerator_repair",
         desc: 'Refrigerator',
-        img: refrigerator_repair
+        img: refrigerator_repair,
+        checkout_desc: 'We are here to tend to the world class Refrigerator repairing services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'appliance_repair'
     },
     {
         id: "washing_machine_repair",
         desc: 'Washing Machine',
-        img: washing_machine_repair
+        img: washing_machine_repair,
+        checkout_desc: 'We are here to tend to the world class Washing Machine repairing services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'appliance_repair'
     },
     {
         id: "water_heater_repair",
         desc: 'Water Heater',
-        img: water_heater_repair
+        img: water_heater_repair,
+        checkout_desc: 'We are here to tend to the world class Water Heater repairing services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'appliance_repair'
     },
     {
         id: "dishwasher_repair",
         desc: 'Dishwasher',
-        img: dishwasher_repair
+        img: dishwasher_repair,
+        checkout_desc: 'We are here to tend to the world class Dishwasher repairing services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'appliance_repair'
     },
     {
         id: "household_appliance_repair",
         des: 'Household Appliance',
-        img: household_appliances_repair
+        img: household_appliances_repair,
+        checkout_desc: 'We are here to tend to the world class Household Appliance repairing services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'appliance_repair'
     }
 ]
 export const services_electrician = [
     {
-        desc: 'Fan ',
-        img: fan
+        id: 'fan',
+        desc: 'Fan Repair and Installation',
+        img: fan,
+        checkout_desc: 'We are here to tend to the world class Fan repairing or installation services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'electrician'
     },
     {
-        desc: 'Switchboard ',
-        img: switchboard
+        id: 'switchboard',
+        desc: 'Switchboard Repair and Installation',
+        img: switchboard,
+        checkout_desc: 'We are here to tend to the world class Switchboard repairing and installation services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'electrician'
     },
     {
-        desc: 'Fuse ',
-        img: fuse
+        id: 'fuse',
+        desc: 'Fuse Repair and Installation',
+        img: fuse,
+        checkout_desc: 'We are here to tend to the world class Fuse repairing and installation services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'electrician'
     },
     {
-        desc: 'New internal wiring ',
-        img: new_internal_wiring
+        id: 'new_internal_wiring',
+        desc: 'New internal wiring',
+        img: new_internal_wiring,
+        checkout_desc: 'We are here to tend to the world class Internal Wiring repairing and installation services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'electrician'
     },
     {
-        desc: 'Inverter Servicing',
-        img: inverter_servicing
+        id: 'inverter_servicing',
+        desc: 'Inverter Repair and Installation',
+        img: inverter_servicing,
+        checkout_desc: 'We are here to tend to the world class Inverter repairing and installation services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'electrician'
+
     },
     {
-        desc: 'Light Fitting',
-        img: light_fitting
+        id: 'light_fitting',
+        desc: 'Lights Repair and Installation',
+        img: light_fitting,
+        checkout_desc: 'We are here to tend to the world class Light repairing and installation services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'electrician'
     },
     {
-        desc: 'CCTV camera',
-        img: cctv_camera
+        id: 'cctv_camera',
+        desc: 'CCTV camera Repair and Installation',
+        img: cctv_camera,
+        checkout_desc: 'We are here to tend to the world class CCTV repairing and installation services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'electrician'
     },
     {
-        desc: 'Door bell ',
-        img: door_bell
+        id: 'door_bell',
+        desc: 'Door bell Repair and Installation',
+        img: door_bell,
+        checkout_desc: 'We are here to tend to the world class Door Bell repairing and installation services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'electrician'
     }
 ]
 export const services_plumbing = [
     {
-        desc: 'Water Tank ',
-        img: water_tank
+        id: 'water_tank',
+        desc: 'Water Tank Cleaning and Installation',
+        img: water_tank,
+        checkout_desc: 'We are here to the give quality Water Tank cleaning and installation services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'plumbing'
     },
     {
-        desc: 'Tab and Mixer ',
-        img: tab_and_mixer
+        id: 'tab_and_mixer',
+        desc: 'Tab and Mixer Repair and Installation',
+        img: tab_and_mixer,
+        checkout_desc: 'We are here to the give quality Tab and Mixer repair and installation services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'plumbing'
     },
     {
-        desc: 'Basin and Sink ',
-        img: basin_and_sink
+        id: 'basin_and_sink',
+        desc: 'Basin and Sink Repair and Installation',
+        img: basin_and_sink,
+        checkout_desc: 'We are here to the give quality Basin and Sink repair and installation services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'plumbing'
     },
     {
+        id: 'toilet_and_bathroom',
         desc: 'Toilet, Bathroom or Kitchen',
-        img: toilet_and_bathroom
+        img: toilet_and_bathroom,
+        checkout_desc: 'We are here to the give quality Toilet, Bathroom or Kitchen plumbing services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'plumbing'
     },
     {
+        id: 'water_leakage',
         desc: 'water Leakage ',
-        img: water_leakage
+        img: water_leakage,
+        checkout_desc: 'We are here to the give quality water leakage fixing service to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'plumbing'
     },
     {
+        id: 'whole_house_plumbing',
         desc: 'Whole House Plumbing ',
-        img: whole_house_plumbing
+        img: whole_house_plumbing,
+        checkout_desc: 'We are here to the give quality whole house plumbing repair and installation services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'plumbing'
     }
 ]
 export const services_house_cleaning = [
     {
+        id: 'pest_control',
         desc: 'Pest Control ',
-        img: pest_control
+        img: pest_control,
+        checkout_desc: 'We are here to the give quality Pest control services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'house_cleaning'
     },
     {
+        id: 'house_deep_cleaning',
         desc: 'House Deep Cleaning ',
-        img: house_deep_cleaning
+        img: house_deep_cleaning,
+        checkout_desc: 'We are here to the give quality House Deep Cleaning services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'house_cleaning'
     },
     {
+        id: 'kitchen_deep_cleaning',
         desc: 'Kitchen Deep Cleaning ',
-        img: kitchen_deep_cleaning
+        img: kitchen_deep_cleaning,
+        checkout_desc: 'We are here to the give quality Kitchen Deep Cleaning services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'house_cleaning'
     },
     {
+        id: 'carpet_cleaning',
         desc: 'Carpet Cleaning',
-        img: carpet_cleaning
+        img: carpet_cleaning,
+        checkout_desc: 'We are here to the give quality Carpet Cleaning services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'house_cleaning'
     },
     {
+        id: 'house_painting',
         desc: 'House Painting',
-        img: house_painting
+        img: house_painting,
+        checkout_desc: 'We are here to the give quality House Painting services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'house_cleaning'
     },
     {
+        id: 'sweeping_and_moping',
         disc: 'Sweeping and Mopping',
-        img: sweeping_and_mopping
+        img: sweeping_and_mopping,
+        checkout_desc: 'We are here to the give quality Sweeping and Mopping services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'house_cleaning'
     },
     {
+        id: 'dust_cleaning',
         desc: 'Dust Cleaning',
-        img: dust_cleaning
+        img: dust_cleaning,
+        checkout_desc: 'We are here to the give quality Dust Cleaning services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'house_cleaning'
     },
     {
+        id: 'furniture_cleaning',
         desc: 'Furniture Cleaning',
-        img: furniture_cleaning
+        img: furniture_cleaning,
+        checkout_desc: 'We are here to the give quality Furniture Cleaning services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'house_cleaning'
     },
     {
+        id: 'bathroom_cleaning',
         desc: 'Bathroom Cleaning',
-        img: bathroom_cleaning
+        img: bathroom_cleaning,
+        checkout_desc: 'We are here to the give quality Bathroom Cleaning services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'house_cleaning'
     }
 ]
 export const services_online_instructor = [
     {
-        desc: 'Coding ',
-        img: coding
+        id: 'coding',
+        desc: 'Coding Classes',
+        img: coding,
+        checkout_desc: 'We are here to the give quality Coding Classes to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'online_instructor'
     },
     {
-        desc: 'health and Diet ',
-        img: health_and_diet
+        id: 'health_and_diet',
+        desc: 'health and Diet Consultancy',
+        img: health_and_diet,
+        checkout_desc: 'We are here to the give quality Health and Diet consultancy to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'online_instructor'
     },
     {
-        desc: 'Cooking and Baking',
-        img: cooking_and_baking
+        id: 'cooking_and_baking',
+        desc: 'Cooking and Baking Classes',
+        img: cooking_and_baking,
+        checkout_desc: 'We are here to the give quality Cooking and Baking Classes to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'online_instructor'
     },
     {
-        desc: 'Fitness and Gym',
-        img: fitness_and_gym
+        id: 'fitness_and_gym',
+        desc: 'Fitness and Gym Consultancy',
+        img: fitness_and_gym,
+        checkout_desc: 'We are here to the give quality Fitness and Gym consultancy to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'online_instructor'
     },
     {
+        id: 'music_instructor',
         desc: 'Music Instructor',
-        img: music_instructor
+        img: music_instructor,
+        checkout_desc: 'We are here to the give quality Music Classes to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'online_instructor'
     },
     {
+        id: 'tuition_for_kids',
         disc: 'Tuition For Kids',
-        img: tuition_for_kids
+        img: tuition_for_kids,
+        checkout_desc: 'We are here to the give quality Tuitions to Kids no matter what it takes. Thanks for Trusting us.',
+        category: 'online_instructor'
     }
 ]
 export const services_beauty_and_spa = [
     {
+        id: 'makeup_and_face_care',
         desc: 'Makeup and face care',
-        img: makeup_and_face_care
+        img: makeup_and_face_care,
+        checkout_desc: 'We are here to the give quality Makeup and face care services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'beauty_and_spa'
     },
     {
+        id: 'hairstyling_for_women',
         desc: 'Hairstyling for women',
-        img: hairstyling_for_women
+        img: hairstyling_for_women,
+        checkout_desc: 'We are here to the give quality Hairstyling for Women service to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'beauty_and_spa'
     },
     {
+        id: 'massage_and_therapy',
         desc: 'Massage and Therapy ',
-        img: massage_and_therapy
+        img: massage_and_therapy,
+        checkout_desc: 'We are here to the give quality Massage and Therapy services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'beauty_and_spa'
     },
     {
+        id: 'hair_salon_for_men',
         desc: 'Hair solon for men',
-        img: hair_salon_for_men
+        img: hair_salon_for_men,
+        checkout_desc: 'We are here to the give quality Hair salon for men service to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'beauty_and_spa'
     },
     {
+        id: 'skin_care',
         desc: 'Skin Care',
-        img: skin_care
+        img: skin_care,
+        checkout_desc: 'We are here to the give quality Skin care services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'beauty_and_spa'
     }
 ]
 export const services_event_management = [
     {
+        id: 'complete_event_management',
         desc: 'Event Management',
-        img: complete_event_management
+        img: complete_event_management,
+        checkout_desc: 'We are here to the give quality Event Management services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'event_management'
     },
     {
+        id: 'decoration',
         desc: 'Decoration',
-        img: decoration
+        img: decoration,
+        checkout_desc: 'We are here to the give quality Decoration services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'event_management'
     },
     {
+        id: 'photography',
         desc: 'Photography',
-        img: photography
+        img: photography,
+        checkout_desc: 'We are here to the give quality Photography services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'event_management'
     },
     {
+        id: 'event_planning',
         desc: 'Event Planning',
-        img: event_planning
+        img: event_planning,
+        checkout_desc: 'We are here to the give quality Event Planning services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'event_management'
     },
     {
+        id: 'food_and_catering',
         desc: 'Food and Catering',
-        img: food_and_catering
+        img: food_and_catering,
+        checkout_desc: 'We are here to the give quality Food and Catering services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'event_management'
     },
     {
+        id: 'music_and_sound',
         desc: 'Music and Sound',
-        img: music_and_sound
+        img: music_and_sound,
+        checkout_desc: 'We are here to the give quality Music and Sound service to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'event_management'
     }
 ]
 export const services_business = [
     {
+        id: 'ca_for_business',
         desc: 'CA For Business ',
-        img: ca_for_business
+        img: ca_for_business,
+        checkout_desc: 'We are here to the give quality CA For Business service to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'business'
     },
     {
+        id: 'business_consultancy',
         desc: 'Business Consultancy',
-        img: business_consultancy
+        img: business_consultancy,
+        checkout_desc: 'We are here to the give quality Business Consultancy services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'business'
     },
     {
+        id: 'tax_planning',
         desc: 'Tax Planning',
-        img: tax_planning
+        img: tax_planning,
+        checkout_desc: 'We are here to the give quality Tax Planning services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'business'
     },
     {
-        desc: 'GST',
-        img: GST
+        id: 'GST',
+        desc: 'GST License and Registration',
+        img: GST,
+        checkout_desc: 'We are here to the give quality GST planning services to our costumers no matter what it takes. Thanks for Trusting us.',
+        category: 'business'
     }
 ]
 

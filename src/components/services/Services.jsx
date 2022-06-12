@@ -7,6 +7,7 @@ import { GoPrimitiveDot } from "react-icons/go";
 
 export const Services = (props) => {
   Aos.init({ duration: 1000 });
+  console.log(props);
   return (
     <div className={servicesStyles.services_container}>
       <div className={servicesStyles.services_container_title}>
@@ -21,7 +22,7 @@ export const Services = (props) => {
               key={item.id}
               data-aos="zoom-in-up"
             >
-              <Link to={"/categories/" + props.url_title + "/" + item.id}>
+              <Link to={"/categories/" + item.category + "/" + item.id}>
                 <img
                   className={servicesStyles.services_container_content_item_img}
                   src={item.img}

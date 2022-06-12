@@ -1,5 +1,6 @@
 import React from "react";
 import ctaStyles from "./CTA.module.css";
+import { Link } from "react-router-dom";
 
 export const CTA = () => {
   return (
@@ -9,7 +10,9 @@ export const CTA = () => {
         <h5>
           You are just few clicks away from making your service more accessible
         </h5>
-        <button className="button">Register as Professional</button>
+        <Link to="/RegisterAsProfessional">
+          <button className="button">Register as Professional</button>
+        </Link>
       </div>
     </section>
   );

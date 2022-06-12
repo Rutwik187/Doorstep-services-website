@@ -1,11 +1,11 @@
-import React from 'react'
+
 import { ServicesCheckout } from '../ServicesCheckout'
 import { services_appliance_repair } from '../../../data'
 
 export const AcRepairCheckout = () => {
     return (
         <>
-            <ServicesCheckout title={services_appliance_repair[0].desc} desc={services_appliance_repair[0].checkout_desc} url_title="ac_repair_checkout" img={services_appliance_repair[0].img} />
+            <ServicesCheckout title={services_appliance_repair[0].desc} desc={services_appliance_repair[0].checkout_desc} img={services_appliance_repair[0].img} />
         </>
     )
 }
