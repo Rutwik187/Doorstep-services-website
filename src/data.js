@@ -166,10 +166,10 @@ export const featureItems = [
 
 export const popularServices = [
     {
-        id: 'beauty_and_spa',
+        id: 'makeup_and_face_care',
         desc: 'Beauty and Spa',
         img: makeup_and_face_care,
-        category: 'makeup_artist'
+        category: 'beauty_and_spa'
     },
     {
         id: 'switchboard',

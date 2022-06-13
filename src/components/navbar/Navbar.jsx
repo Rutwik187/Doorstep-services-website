@@ -29,8 +29,12 @@ export const Navbar = () => {
         </div>
       </div>
       <div className={navbarStyles.navbar_sign}>
-        <p>Sign in</p>
-        <button type="button">Sign up</button>
+        <p>
+          <Link to="/SignIn">Sign in</Link>
+        </p>
+        <Link to="/SignUp">
+          <button type="button">Sign up</button>
+        </Link>
       </div>
       <div className={navbarStyles.navbar_menu}>
         {toggleMenu ? (
