@@ -9,6 +9,8 @@ import { Home } from './pages/Home';
 import { ContactUs } from './pages/Contact-Us';
 import { RegisterAsProfessional } from './pages/Register-as-professional';
 import { ServicesCategories } from './pages/Services/ServicesCategories';
+import { ClientOrders } from './container/Orders-Dashboards/ClientOrders'
+import { ProfessionalOrders } from './container/Orders-Dashboards/ProfessionalOrders'
 import { SignUp } from './container/SignIn-SignUp/Sign-Up/SignUp';
 import { SignIn } from './container/SignIn-SignUp/Sign-In/SignIn';
 
@@ -30,9 +32,6 @@ import { Coding, CookingAndBaking, FitnessAndGym, HealthAndDiet, MusicInstructor
 
 
 
-
-
-
 function App() {
   return (
     <>
@@ -45,6 +44,8 @@ function App() {
         <Route path="/SignUp" element={<SignUp />} />
 
         <Route path="/Categories" element={<ServicesCategories />} />
+
+        <Route path="/Orders" element={<ProfessionalOrders />} />
 
         {/* Link in pages/services/ServicesCategories*/}
         <Route path="/Categories/appliance_repair" element={<ApplianceRepair />} />

@@ -1,12 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import "../CommonSignInSignUp.css";
 import { FormInput } from "../Form-Inputs/FormInput";
+import axios from "../../../api/axios";
+
+const SIGN_UP_URL = "/SignUp";
 
 export const SignUp = () => {
+  const [success, setSuccess] = useState(false);
+  const [errMsg, setErrMsg] = useState("");
+
   const [values, setValues] = useState({
     username: "",
     email: "",
-    birthday: "",
+    phoneNo: "",
     password: "",
     confirmPassword: "",
   });
@@ -34,6 +40,15 @@ export const SignUp = () => {
     },
     {
       id: 3,
+      name: "phoneNo",
+      type: "text",
+      placeholder: "Phone Number",
+      errorMessage: "10 digits required!",
+      label: "Phone Number",
+      required: true,
+    },
+    {
+      id: 4,
       name: "password",
       type: "password",
       placeholder: "Password",
@@ -44,7 +59,7 @@ export const SignUp = () => {
       required: true,
     },
     {
-      id: 4,
+      id: 5,
       name: "confirmPassword",
       type: "password",
       placeholder: "Confirm Password",
@@ -55,8 +70,37 @@ export const SignUp = () => {
     },
   ];
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(values);
+    setSuccess(true);
+    try {
+      const response = await axios.post(
+        SIGN_UP_URL,
+        JSON.stringify({
+          name: values.username,
+          email: values.email,
+          password: values.password,
+          phoneNo: values.phoneNo,
+        }),
+        {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: true,
+        }
+      );
+      console.log(response?.data);
+      console.log(response?.accessToken);
+      console.log(JSON.stringify(response));
+    } catch (err) {
+      if (!err?.response) {
+        setErrMsg("No Server Response");
+      } else if (err.response?.status === 409) {
+        setErrMsg("Username Taken");
+      } else {
+        setErrMsg("Registration Failed");
+      }
+    }
+    console.log(errMsg);
   };
 
   const onChange = (e) => {
@@ -64,19 +108,32 @@ export const SignUp = () => {
   };
 
   return (
-    <div className="SignInSignUp">
-      <form className="SignInSignUpForm" onSubmit={handleSubmit}>
-        <h4>Sign Up</h4>
-        {inputs.map((input) => (
-          <FormInput
-            key={input.id}
-            {...input}
-            value={values[input.name]}
-            onChange={onChange}
-          />
-        ))}
-        <button className="SignInSignUpButton">Submit</button>
-      </form>
-    </div>
+    <>
+      {success ? (
+        <section>
+          <h1>Success!</h1>
+          <p>
+            <a href="#">Sign In</a>
+          </p>
+        </section>
+      ) : (
+        <section>
+          <div className="SignInSignUp">
+            <form className="SignInSignUpForm" onSubmit={handleSubmit}>
+              <h4>Sign Up</h4>
+              {inputs.map((input) => (
+                <FormInput
+                  key={input.id}
+                  {...input}
+                  value={values[input.name]}
+                  onChange={onChange}
+                />
+              ))}
+              <button className="SignInSignUpButton">Submit</button>
+            </form>
+          </div>
+        </section>
+      )}
+    </>
   );
 };

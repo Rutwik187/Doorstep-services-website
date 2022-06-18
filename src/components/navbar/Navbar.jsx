@@ -24,6 +24,9 @@ export const Navbar = () => {
             <Link to="/RegisterAsProfessional">Register As Professional</Link>
           </p>
           <p>
+            <Link to="/Orders">Orders</Link>
+          </p>
+          <p>
             <Link to="/ContactUs">Contact Us</Link>
           </p>
         </div>

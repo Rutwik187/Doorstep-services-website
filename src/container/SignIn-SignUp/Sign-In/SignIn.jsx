@@ -4,11 +4,8 @@ import { FormInput } from "../Form-Inputs/FormInput";
 
 export const SignIn = () => {
   const [values, setValues] = useState({
-    username: "",
     email: "",
-    birthday: "",
     password: "",
-    confirmPassword: "",
   });
 
   const inputs = [

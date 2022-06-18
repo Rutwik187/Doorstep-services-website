@@ -591,7 +591,7 @@ export const services_business = [
 export const testimonials = [
     {
         id: 1,
-        name: 'Pratham',
+        name: 'John Doe',
         comment: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam iste quidem velit! Ratione similique reiciendis, dicta totam sed.',
         avatar: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
     },

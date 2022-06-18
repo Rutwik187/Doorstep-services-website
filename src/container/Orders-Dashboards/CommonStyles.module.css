@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 85vh;
+  background-color: white;
+  background-size: cover;
+  background-position: center;
+}
+
+.box {
+  background-color: var(--container-bg-color);
+  max-width: 8000px;
+  padding: 30px 60px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.orderDetails > h5 {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 500;
+}
+
+.box > button {
+  margin-top: 3rem;
+}
