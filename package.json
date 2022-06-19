@@ -30,6 +30,7 @@
     "swiper": "^8.1.6",
     "web-vitals": "^2.1.4"
   },
+  "proxy": "https://doorstep-services-website-liard.vercel.app/api",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

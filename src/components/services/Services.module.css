@@ -48,21 +48,30 @@ h5 {
   opacity: 0;
   transition: 0.5s;
 }
-.services_container_content_item:hover .services_container_content_item_label {
-  opacity: 1;
+
+@media (hover: hover) {
+  .services_container_content_item:hover img {
+    transform: scale(1.1);
+  }
+  .services_container_content_item:hover
+    .services_container_content_item_label {
+    opacity: 1;
+  }
 }
 
 .services_container_content_item_label p {
   font-size: 1.5rem;
 }
 
-.services_container_content_item img:hover {
-  transform: scale(1.1);
-}
-
 @media screen and (max-width: 768px) {
   .services_container_content_item {
     width: 40rem;
     height: 30rem;
+  }
+}
+
+@media (hover: none) {
+  .services_container_content_item .services_container_content_item_label {
+    opacity: 1;
   }
 }
