@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import "../CommonSignInSignUp.css";
 import { FormInput } from "../Form-Inputs/FormInput";
 import axios from "../../../api/axios";
@@ -6,7 +6,7 @@ import axios from "../../../api/axios";
 const SIGN_UP_URL = "/register";
 
 export const SignUp = () => {
-  const [success, setSuccess] = useState(false);
+  // const [success, setSuccess] = useState(false);
   const [errMsg, setErrMsg] = useState("");
 
   const [values, setValues] = useState({
@@ -73,7 +73,8 @@ export const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(values);
-    setSuccess(true);
+    console.log(values.phoneNo);
+
     try {
       const response = await axios.post(
         SIGN_UP_URL,
@@ -88,6 +89,8 @@ export const SignUp = () => {
           withCredentials: true,
         }
       );
+      console.log("first");
+      console.log(response);
       console.log(response?.data);
       console.log(response?.accessToken);
       console.log(JSON.stringify(response));
@@ -108,32 +111,21 @@ export const SignUp = () => {
   };
 
   return (
-    <>
-      {success ? (
-        <section>
-          <h1>Success!</h1>
-          <p>
-            <a href="#">Sign In</a>
-          </p>
-        </section>
-      ) : (
-        <section>
-          <div className="SignInSignUp">
-            <form className="SignInSignUpForm" onSubmit={handleSubmit}>
-              <h4>Sign Up</h4>
-              {inputs.map((input) => (
-                <FormInput
-                  key={input.id}
-                  {...input}
-                  value={values[input.name]}
-                  onChange={onChange}
-                />
-              ))}
-              <button className="SignInSignUpButton">Submit</button>
-            </form>
-          </div>
-        </section>
-      )}
-    </>
+    <section>
+      <div className="SignInSignUp">
+        <form className="SignInSignUpForm" onSubmit={handleSubmit}>
+          <h4>Sign Up</h4>
+          {inputs.map((input) => (
+            <FormInput
+              key={input.id}
+              {...input}
+              value={values[input.name]}
+              onChange={onChange}
+            />
+          ))}
+          <button className="SignInSignUpButton">Submit</button>
+        </form>
+      </div>
+    </section>
   );
 };

@@ -7,7 +7,7 @@ import { GoPrimitiveDot } from "react-icons/go";
 
 export const Services = (props) => {
   Aos.init({ duration: 1000 });
-  console.log(props);
+
   return (
     <div className={servicesStyles.services_container}>
       <div className={servicesStyles.services_container_title}>

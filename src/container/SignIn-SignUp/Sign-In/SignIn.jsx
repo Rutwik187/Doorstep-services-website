@@ -1,8 +1,17 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import "../CommonSignInSignUp.css";
 import { FormInput } from "../Form-Inputs/FormInput";
 
+import AuthContext from "../../../context/AuthProvider";
+
+import axios from "../../../api/axios";
+const LOGIN_URL = "/login";
+
 export const SignIn = () => {
+  const { setAuth } = useContext(AuthContext);
+
+  const [success, setSuccess] = useState(false);
+
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -31,8 +40,39 @@ export const SignIn = () => {
     },
   ];
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    try {
+      const response = await axios.post(
+        LOGIN_URL,
+        JSON.stringify({ email: values.email, password: values.password }),
+        {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: true,
+        }
+      );
+      console.log(JSON.stringify(response?.data));
+      //console.log(JSON.stringify(response));
+      const accessToken = response?.data?.accessToken;
+      // const roles = response?.data?.roles;
+      setAuth({
+        email: values.email,
+        password: values.password,
+        accessToken,
+      });
+      setSuccess(true);
+    } catch (err) {
+      if (!err?.response) {
+        console.log("No Server Response");
+      } else if (err.response?.status === 400) {
+        console.log("Missing Username or Password");
+      } else if (err.response?.status === 401) {
+        console.log("Unauthorized");
+      } else {
+        console.log("Login Failed");
+      }
+    }
   };
 
   const onChange = (e) => {
@@ -40,19 +80,31 @@ export const SignIn = () => {
   };
 
   return (
-    <div className="SignInSignUp">
-      <form className="SignInSignUpForm" onSubmit={handleSubmit}>
-        <h4>Sign In</h4>
-        {inputs.map((input) => (
-          <FormInput
-            key={input.id}
-            {...input}
-            value={values[input.name]}
-            onChange={onChange}
-          />
-        ))}
-        <button className="SignInSignUpButton">Submit</button>
-      </form>
-    </div>
+    <>
+      {success ? (
+        <section>
+          <h1>You are logged in!</h1>
+          <br />
+          <p>
+            <p>Go to Home</p>
+          </p>
+        </section>
+      ) : (
+        <div className="SignInSignUp">
+          <form className="SignInSignUpForm" onSubmit={handleSubmit}>
+            <h4>Sign In</h4>
+            {inputs.map((input) => (
+              <FormInput
+                key={input.id}
+                {...input}
+                value={values[input.name]}
+                onChange={onChange}
+              />
+            ))}
+            <button className="SignInSignUpButton">Submit</button>
+          </form>
+        </div>
+      )}
+    </>
   );
 };
