@@ -8,6 +8,7 @@
   align-items: center;
   padding: 1rem;
   margin-right: 4rem;
+  margin-bottom: 3rem;
 }
 
 .search input {
@@ -36,6 +37,7 @@ input:focus {
 }
 
 .dataResult {
+  z-index: 5;
   position: absolute;
   margin-top: 5px;
   width: 300px;

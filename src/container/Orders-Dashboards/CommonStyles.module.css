@@ -1,35 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400700&display=swap");
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-body {
-  font-family: "Noto Sans", sans-serif;
-  color: #4f546c;
-}
 .wrapper {
   margin: 2rem;
   display: flex;
-
   justify-content: center;
+  flex-wrap: wrap;
 }
 .card {
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
-  width: 60rem;
+  flex-direction: column;
+  width: 30rem;
   display: flex;
   margin: 4rem;
 }
 .card__img {
-  width: 60rem;
-  height: 30rem;
+  width: 30rem;
+  height: 20rem;
   object-fit: cover;
 }
 .card__body {
+  text-align: center;
   margin: 1rem;
   flex-grow: 1;
 }
@@ -46,9 +35,11 @@ body {
   content: "₹";
 }
 
-@media screen and (min-width: 600px) {
+@media only screen and (max-width: 600px) {
   .wrapper {
-    grid-template-columns: repeat(auto-fit, minmax(14rem, 16rem));
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   .card {
     flex-direction: column;
@@ -57,6 +48,6 @@ body {
   }
   .card__img {
     width: 100%;
-    height: 12rem;
+    height: 20rem;
   }
 }
