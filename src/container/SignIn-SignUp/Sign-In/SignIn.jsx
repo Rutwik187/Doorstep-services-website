@@ -53,7 +53,7 @@ export const SignIn = () => {
         }
       );
       console.log(JSON.stringify(response?.data));
-      //console.log(JSON.stringify(response));
+      console.log(JSON.stringify(response));
       const accessToken = response?.data?.accessToken;
       // const roles = response?.data?.roles;
       setAuth({
@@ -61,6 +61,7 @@ export const SignIn = () => {
         password: values.password,
         accessToken,
       });
+      console.log(values);
       setSuccess(true);
     } catch (err) {
       if (!err?.response) {

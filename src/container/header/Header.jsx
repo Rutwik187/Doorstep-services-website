@@ -1,8 +1,12 @@
 import React from "react";
 import headerStyles from "./Header.module.css";
-import { GoLocation, GoSearch } from "react-icons/go";
+import { GoLocation } from "react-icons/go";
 import { categoriesData } from "../../data";
 import { Link } from "react-router-dom";
+import { SearchBar } from "../../components/searchBar/SearchBar";
+import allServices from "./ServicesImports";
+import { Cities } from "../../data";
+
 // import { Test } from "../Test";
 
 export const Header = () => {
@@ -21,24 +25,13 @@ export const Header = () => {
 
       <div className={headerStyles.inputBoxes}>
         <div className={headerStyles.gradient}></div>
-        <div
-          className={`${headerStyles.input_box} ${headerStyles.location_input_box} `}
-        >
-          <GoLocation fill="#757575" size={27} />
-          <input type="text" placeholder="Enter the City" />
-        </div>
-        <div
-          className={`${headerStyles.input_box} ${headerStyles.service_input_box}`}
-        >
-          <GoSearch fill="#757575" size={27} />
-          <input type="text" placeholder="Enter the Service" />
-          <button className={headerStyles.header_search_button}>Search</button>
-        </div>
+        <SearchBar placeholder="Search the Location" data={Cities} />
+
+        <SearchBar placeholder="Search the Service" data={allServices} />
       </div>
 
       <div className={headerStyles.categories}>
         <h3>Categories</h3>
-
         <div className={headerStyles.categories_container}>
           {categoriesData.map((item) => (
             <Link to={"/categories/" + item.id}>

@@ -62,6 +62,25 @@ input:focus {
   position: relative;
 }
 
+.search_results {
+  z-index: +1;
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  align-items: center;
+  margin: 1rem 4rem;
+  width: 40rem;
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-sizing: border-box;
+  transition: 0.3s;
+  position: absolute;
+}
+
+.search_results > ul > li {
+  font-size: 2rem;
+}
+
 .input_box:focus {
   border-color: gray;
   box-shadow: 0 0 4px 0 var(--primary-color);

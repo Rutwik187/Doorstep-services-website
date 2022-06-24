@@ -10,7 +10,7 @@ import { ContactUs } from './pages/Contact-Us';
 import { RegisterAsProfessional } from './pages/Register-as-professional';
 import { ServicesCategories } from './pages/Services/ServicesCategories';
 import { ClientOrders } from './container/Orders-Dashboards/ClientOrders'
-import { ProfessionalOrders } from './container/Orders-Dashboards/ProfessionalOrders'
+// import { ProfessionalOrders } from './container/Orders-Dashboards/ProfessionalOrders'
 import { SignUp } from './container/SignIn-SignUp/Sign-Up/SignUp';
 import { SignIn } from './container/SignIn-SignUp/Sign-In/SignIn';
 
@@ -45,7 +45,7 @@ function App() {
 
         <Route path="/Categories" element={<ServicesCategories />} />
 
-        <Route path="/Orders" element={<ProfessionalOrders />} />
+        <Route path="/Orders" element={<ClientOrders />} />
 
         {/* Link in pages/services/ServicesCategories*/}
         <Route path="/Categories/appliance_repair" element={<ApplianceRepair />} />
@@ -66,6 +66,7 @@ function App() {
         <Route path="/categories/appliance_repair/ac_repair" element={<HouseholdApplianceRepairCheckout />} />
         <Route path="/categories/appliance_repair/mixer_grinder_repair" element={<MixerGrinderRepairCheckout />} />
         <Route path="/categories/appliance_repair/dishwasher_repair" element={<DishwasherRepairCheckout />} />
+        <Route path="/categories/appliance_repair/household_appliance_repair" element={< HouseholdApplianceRepairCheckout />} />
 
 
         <Route path="/categories/electrician/fan" element={<Fan />} />

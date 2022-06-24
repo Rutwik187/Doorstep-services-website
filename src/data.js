@@ -257,7 +257,7 @@ export const services_appliance_repair = [
     },
     {
         id: "household_appliance_repair",
-        des: 'Household Appliance',
+        desc: 'Household Appliance',
         img: household_appliances_repair,
         checkout_desc: 'We are here to tend to the world class Household Appliance repairing services to our costumers no matter what it takes. Thanks for Trusting us.',
         category: 'appliance_repair'
@@ -404,7 +404,7 @@ export const services_house_cleaning = [
     },
     {
         id: 'sweeping_and_moping',
-        disc: 'Sweeping and Mopping',
+        desc: 'Sweeping and Mopping',
         img: sweeping_and_mopping,
         checkout_desc: 'We are here to the give quality Sweeping and Mopping services to our costumers no matter what it takes. Thanks for Trusting us.',
         category: 'house_cleaning'
@@ -469,7 +469,7 @@ export const services_online_instructor = [
     },
     {
         id: 'tuition_for_kids',
-        disc: 'Tuition For Kids',
+        desc: 'Tuition For Kids',
         img: tuition_for_kids,
         checkout_desc: 'We are here to the give quality Tuitions to Kids no matter what it takes. Thanks for Trusting us.',
         category: 'online_instructor'
@@ -613,7 +613,7 @@ export const stepsData = [
     {
         id: 1,
         animation: 'fade-left',
-        text: 'Check if we offer services in your area by entering city name',
+        text: 'Check if we offer services in your area by entering desc name',
         step_no: 'Step 1',
     },
     {
@@ -663,3 +663,45 @@ export const Data = [
         answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quidem, quaerat ipsam illo atque dignissimos quam accusamus'
     }
 ];
+
+export const Cities = [
+    {
+        desc: 'Mumbai',
+    },
+    {
+        desc: 'Delhi',
+    },
+    {
+        desc: 'Kolkata',
+    },
+    {
+        desc: 'Banglore',
+    },
+    {
+        desc: 'Pune',
+    },
+    {
+        desc: 'Surat',
+    },
+    {
+        desc: 'Ahmadabad',
+    },
+    {
+        desc: 'Chennai',
+    },
+    {
+        desc: 'Jaipur',
+    },
+    {
+        desc: 'Lucknow',
+    },
+    {
+        desc: 'Kanpur',
+    },
+    {
+        desc: 'varanasi',
+    },
+    {
+        desc: 'Bhubaneshwar',
+    }
+] 
