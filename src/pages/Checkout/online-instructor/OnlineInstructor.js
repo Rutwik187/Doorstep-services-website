@@ -1,5 +1,5 @@
 import { ServicesCheckout } from '../ServicesCheckout'
-import { services_online_instructor } from '../../../data'
+import { services_online_instructor } from '../../../Data/ServicesData'
 
 export const Coding = () => {
     return (

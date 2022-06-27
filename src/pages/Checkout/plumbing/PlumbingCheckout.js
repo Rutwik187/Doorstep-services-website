@@ -1,5 +1,5 @@
 import { ServicesCheckout } from '../ServicesCheckout'
-import { services_plumbing } from '../../../data'
+import { services_plumbing } from '../../../Data/ServicesData'
 
 export const WaterTank = () => {
     return (

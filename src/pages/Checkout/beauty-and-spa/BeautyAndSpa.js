@@ -1,5 +1,5 @@
 import { ServicesCheckout } from '../ServicesCheckout'
-import { services_beauty_and_spa } from '../../../data'
+import { services_beauty_and_spa } from '../../../Data/ServicesData'
 
 export const MakeupAndFaceCare = () => {
     return (

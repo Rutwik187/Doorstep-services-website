@@ -1,5 +1,5 @@
 import { ServicesCheckout } from '../ServicesCheckout'
-import { services_electrician } from '../../../data'
+import { services_electrician } from '../../../Data/ServicesData'
 
 export const Fan = () => {
     return (

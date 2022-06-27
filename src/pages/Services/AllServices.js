@@ -1,11 +1,6 @@
 import { Services } from '../../components/services/Services'
-import { services_appliance_repair, services_business } from '../../data'
-import { services_plumbing } from '../../data'
-import { services_beauty_and_spa } from '../../data'
-import { services_electrician } from '../../data'
-import { services_house_cleaning } from '../../data'
-import { services_online_instructor } from '../../data'
-import { services_event_management } from '../../data'
+import { services_appliance_repair, services_business, services_plumbing, services_beauty_and_spa, services_electrician, services_house_cleaning, services_online_instructor, services_event_management } from '../../Data/ServicesData'
+
 
 
 export function ApplianceRepair() {

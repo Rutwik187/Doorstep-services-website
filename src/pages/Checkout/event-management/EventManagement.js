@@ -1,5 +1,5 @@
 import { ServicesCheckout } from '../ServicesCheckout'
-import { services_event_management } from '../../../data'
+import { services_event_management } from '../../../Data/ServicesData'
 
 export const CompleteEventManagement = () => {
     return (

@@ -1,5 +1,5 @@
 import { Services } from "../../components/services/Services";
-import { popularServices } from "../../data";
+import { popularServices } from "../../Data/ServicesData";
 
 export const PopularServices = () => {
   return (

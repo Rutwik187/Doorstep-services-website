@@ -39,10 +39,8 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route exact path="/" element={<Home />} />
-
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/SignUp" element={<SignUp />} />
-
         <Route path="/Categories" element={<ServicesCategories />} />
 
         <Route path="/Orders" element={<ClientOrders />} />

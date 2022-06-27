@@ -1,6 +1,6 @@
 import testimonialsStyles from "./Testimonials.module.css";
 import { FaQuoteRight } from "react-icons/fa";
-import { testimonials } from "../../data";
+import { testimonials } from "../../Data/UI-Data";
 import React from "react";
 
 // for swiper
@@ -19,28 +19,26 @@ export const Testimonials = () => {
           <div
             className={`${testimonialsStyles.content} ${testimonialsStyles.testimonials_large_screen}`}
           >
-            {testimonials.map((testimonial) => {
-              return (
-                <div
-                  className={testimonialsStyles.testimonial_card}
-                  key={testimonial.id}
-                >
-                  <div className={testimonialsStyles.text}>
-                    {testimonial.comment}
-                    <FaQuoteRight className={testimonialsStyles.quote} />
-                  </div>
-
-                  <div className={testimonialsStyles.footer}>
-                    <div className={testimonialsStyles.image}>
-                      <img src={testimonial.avatar} alt="user" />
-                    </div>
-                    <h2 className={testimonialsStyles.person}>
-                      {testimonial.name}
-                    </h2>
-                  </div>
+            {testimonials.map((testimonial) => (
+              <div
+                key={testimonial.id}
+                className={testimonialsStyles.testimonial_card}
+              >
+                <div className={testimonialsStyles.text}>
+                  {testimonial.comment}
+                  <FaQuoteRight className={testimonialsStyles.quote} />
                 </div>
-              );
-            })}
+
+                <div className={testimonialsStyles.footer}>
+                  <div className={testimonialsStyles.image}>
+                    <img src={testimonial.avatar} alt="user" />
+                  </div>
+                  <h2 className={testimonialsStyles.person}>
+                    {testimonial.name}
+                  </h2>
+                </div>
+              </div>
+            ))}
           </div>
 
           <div
@@ -53,32 +51,25 @@ export const Testimonials = () => {
               modules={[Pagination]}
               className="mySwiper"
             >
-              {testimonials.map((testimonial) => {
-                return (
-                  <>
-                    <SwiperSlide>
-                      <div
-                        className={testimonialsStyles.testimonial_card}
-                        key={testimonial.id}
-                      >
-                        <div className={testimonialsStyles.text}>
-                          {testimonial.comment}
-                          <FaQuoteRight className={testimonialsStyles.quote} />
-                        </div>
+              {testimonials.map((testimonial) => (
+                <SwiperSlide key={testimonial.swiperId}>
+                  <div className={testimonialsStyles.testimonial_card}>
+                    <div className={testimonialsStyles.text}>
+                      {testimonial.comment}
+                      <FaQuoteRight className={testimonialsStyles.quote} />
+                    </div>
 
-                        <div className={testimonialsStyles.footer}>
-                          <div className={testimonialsStyles.image}>
-                            <img src={testimonial.avatar} alt="user" />
-                          </div>
-                          <h2 className={testimonialsStyles.person}>
-                            {testimonial.name}
-                          </h2>
-                        </div>
+                    <div className={testimonialsStyles.footer}>
+                      <div className={testimonialsStyles.image}>
+                        <img src={testimonial.avatar} alt="user" />
                       </div>
-                    </SwiperSlide>
-                  </>
-                );
-              })}
+                      <h2 className={testimonialsStyles.person}>
+                        {testimonial.name}
+                      </h2>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
             </Swiper>
           </div>
         </div>

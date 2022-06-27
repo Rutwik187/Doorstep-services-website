@@ -1,11 +1,10 @@
 import React from "react";
 import headerStyles from "./Header.module.css";
-import { GoLocation } from "react-icons/go";
-import { categoriesData } from "../../data";
+import { categoriesData } from "../../Data/CategoriesData";
 import { Link } from "react-router-dom";
 import { SearchBar } from "../../components/searchBar/SearchBar";
 import allServices from "./ServicesImports";
-import { Cities } from "../../data";
+import { Cities } from "../../Data/CityData";
 
 // import { Test } from "../Test";
 
@@ -26,7 +25,6 @@ export const Header = () => {
       <div className={headerStyles.inputBoxes}>
         <div className={headerStyles.gradient}></div>
         <SearchBar placeholder="Search the Location" data={Cities} />
-
         <SearchBar placeholder="Search the Service" data={allServices} />
       </div>
 
@@ -34,16 +32,16 @@ export const Header = () => {
         <h3>Categories</h3>
         <div className={headerStyles.categories_container}>
           {categoriesData.map((item) => (
-            <Link to={"/categories/" + item.id}>
-              <div
-                category-id={item.id}
-                // onClick={() => onclickHandler(item)}
-                className={headerStyles.categories_container_item}
-              >
+            <div
+              key={item.id}
+              // onClick={() => onclickHandler(item)}
+              className={headerStyles.categories_container_item}
+            >
+              <Link to={"/categories/" + item.id}>
                 <img src={item.icon_img} alt={item.desc} />
                 <p>{item.desc}</p>
-              </div>
-            </Link>
+              </Link>
+            </div>
           ))}
           {/* <Test showModal={show} closeModal={() => setShow(false)} /> */}
         </div>

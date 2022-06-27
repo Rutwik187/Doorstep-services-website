@@ -1,7 +1,7 @@
 import React from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { stepsData } from "../../data";
+import { stepsData } from "../../Data/UI-Data";
 import stepsStyles from "./Steps.module.css";
 
 export const Steps = () => {

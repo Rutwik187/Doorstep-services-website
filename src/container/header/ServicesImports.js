@@ -1,4 +1,4 @@
-import { services_appliance_repair, services_beauty_and_spa, services_business, services_electrician, services_event_management, services_house_cleaning, services_online_instructor, services_plumbing } from "../../data";
+import { services_appliance_repair, services_beauty_and_spa, services_business, services_electrician, services_event_management, services_house_cleaning, services_online_instructor, services_plumbing } from "../../Data/ServicesData";
 
 let appliance_repair = services_appliance_repair;
 let beauty_and_spa = services_beauty_and_spa;

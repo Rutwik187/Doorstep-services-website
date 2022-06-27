@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Data } from "../../data";
+import { AccordionData } from "../../Data/UI-Data";
 import { IconContext } from "react-icons";
 import { FiPlus, FiMinus } from "react-icons/fi";
 import AccordionStyles from "./Accordion.module.css";
@@ -25,28 +25,24 @@ const Accordion = () => {
         </div>
 
         <div className={AccordionStyles.Accordion_FAQs}>
-          {Data.map((item, index) => {
-            return (
-              <>
-                <div
-                  className={AccordionStyles.Wrap}
-                  onClick={() => toggle(index)}
-                  key={index}
-                >
-                  <div className={AccordionStyles.Question}>
-                    <h5>{item.question}</h5>
-                    <span>{clicked === index ? <FiMinus /> : <FiPlus />}</span>
-                  </div>
+          {AccordionData.map((item, index) => (
+            <div
+              className={AccordionStyles.Wrap}
+              onClick={() => toggle(index)}
+              key={item.id}
+            >
+              <div className={AccordionStyles.Question}>
+                <h5>{item.question}</h5>
+                <span>{clicked === index ? <FiMinus /> : <FiPlus />}</span>
+              </div>
 
-                  {clicked === index ? (
-                    <div className={AccordionStyles.Dropdown}>
-                      <p>{item.answer}</p>
-                    </div>
-                  ) : null}
+              {clicked === index ? (
+                <div className={AccordionStyles.Dropdown}>
+                  <p>{item.answer}</p>
                 </div>
-              </>
-            );
-          })}
+              ) : null}
+            </div>
+          ))}
         </div>
       </div>
     </IconContext.Provider>

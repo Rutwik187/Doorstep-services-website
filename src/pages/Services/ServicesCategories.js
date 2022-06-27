@@ -1,4 +1,4 @@
-import { categoriesData } from '../../data'
+import { categoriesData } from '../../Data/CategoriesData'
 import Aos from "aos";
 import "aos/dist/aos.css";
 import servicesStyles from "../../components/services/Services.module.css";
@@ -15,30 +15,32 @@ export const ServicesCategories = () => {
                 <h5>Explore the greatest our services.</h5>
             </div>
             <div className={servicesStyles.services_container_content}>
-                {categoriesData.map((item) => {
-                    return (
+                {categoriesData.map((item) =>
+                (
+                    <div
+                        key={item.id}
+                        className={servicesStyles.services_container_content_item}
+                        data-aos="zoom-in-up"
+                    >
                         <Link to={"/categories/" + item.id}>
+
+                            <img
+                                className={servicesStyles.services_container_content_item_img}
+                                src={item.img}
+                                alt={item.desc}
+                            />
                             <div
-                                className={servicesStyles.services_container_content_item}
-                                data-aos="zoom-in-up"
+                                className={
+                                    servicesStyles.services_container_content_item_label
+                                }
                             >
-                                <img
-                                    className={servicesStyles.services_container_content_item_img}
-                                    src={item.img}
-                                    alt={item.desc}
-                                />
-                                <div
-                                    className={
-                                        servicesStyles.services_container_content_item_label
-                                    }
-                                >
-                                    <GoPrimitiveDot fill="#6b7cff" size={20} />
-                                    <p>{item.desc}</p>
-                                </div>
+                                <GoPrimitiveDot fill="#6b7cff" size={20} />
+                                <p>{item.desc}</p>
                             </div>
                         </Link>
-                    );
-                })}
+                    </div>
+                )
+                )}
             </div>
         </div>
     );

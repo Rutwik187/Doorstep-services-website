@@ -1,5 +1,5 @@
 import { ServicesCheckout } from '../ServicesCheckout'
-import { services_business } from '../../../data'
+import { services_business } from '../../../Data/ServicesData'
 
 export const CAForBusiness = () => {
     return (

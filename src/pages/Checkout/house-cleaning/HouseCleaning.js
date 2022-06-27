@@ -1,5 +1,5 @@
 import { ServicesCheckout } from '../ServicesCheckout'
-import { services_house_cleaning } from '../../../data'
+import { services_house_cleaning } from '../../../Data/ServicesData'
 
 export const PestControl = () => {
     return (

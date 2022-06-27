@@ -8,7 +8,6 @@
   align-items: center;
   padding: 1rem;
   margin-right: 4rem;
-  margin-bottom: 3rem;
 }
 
 .search input {
@@ -17,7 +16,6 @@
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
   font-size: 18px;
-
   height: 30px;
   width: 300px;
 }
@@ -72,4 +70,17 @@ input:focus {
 
 #clearBtn {
   cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+  .searchInputs {
+    margin: 3rem 5rem 1rem 3rem;
+    /* margin-bottom: 4rem; */
+    /* width: 80%; */
+    align-items: center;
+    justify-content: center;
+  }
+  .search input {
+    width: 200px;
+  }
 }

@@ -1,6 +1,6 @@
 
 import { ServicesCheckout } from '../ServicesCheckout'
-import { services_appliance_repair } from '../../../data'
+import { services_appliance_repair } from '../../../Data/ServicesData'
 
 export const AcRepairCheckout = () => {
     return (
