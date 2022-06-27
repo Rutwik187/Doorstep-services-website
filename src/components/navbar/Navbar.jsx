@@ -74,8 +74,12 @@ export const Navbar = () => {
               </p>
             </div>
             <div className={navbarStyles.navbar_menu_container_links_sign}>
-              <p>Sign in</p>
-              <button type="button">Sign up</button>
+              <Link to="/SignIn">
+                <p>Sign in</p>
+              </Link>
+              <Link to="/SignUp">
+                <button type="button">Sign up</button>
+              </Link>
             </div>
           </div>
         )}

@@ -1,79 +1,91 @@
+// import ContactFormStyles from "./ContactForm.module.css";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import ContactFormStyles from "./ContactForm.module.css";
-import React from "react";
 
 export const ContactForm = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_1faugds",
+        "template_x2b4vud",
+        form.current,
+        "Q_s4xBfFb3XW36xQA"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          console.log("message sent");
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
   return (
-    <div className={ContactFormStyles.background}>
-      <div className={ContactFormStyles.container}>
-        <div className={ContactFormStyles.screen}>
-          <div className={ContactFormStyles.screen_header}>
-            <div className={ContactFormStyles.screen_header_left}>
-              <div
-                className={`${ContactFormStyles.screen_header_button} ${ContactFormStyles.close}`}
-              ></div>
-              <div
-                className={`${ContactFormStyles.screen_header_button} ${ContactFormStyles.maximize}`}
-              ></div>
-              <div
-                className={`${ContactFormStyles.screen_header_button} ${ContactFormStyles.maximize}`}
-              ></div>
+    <section className={ContactFormStyles.contact}>
+      <div className={ContactFormStyles.contact_box}>
+        <div className={ContactFormStyles.contact_links}>
+          <h2>CONTACT US</h2>
+          <div className={ContactFormStyles.links}>
+            <div className={ContactFormStyles.link}>
+              <a>
+                <img
+                  src="https://i.postimg.cc/m2mg2Hjm/linkedin.png"
+                  alt="linkedin"
+                />
+              </a>
             </div>
-            <div className={ContactFormStyles.screen_header_right}>
-              <div className={ContactFormStyles.screen_header_ellipsis}></div>
-              <div className={ContactFormStyles.screen_header_ellipsis}></div>
-              <div className={ContactFormStyles.screen_header_ellipsis}></div>
+            <div className={ContactFormStyles.link}>
+              <a>
+                <img
+                  src="https://i.postimg.cc/YCV2QBJg/github.png"
+                  alt="github"
+                />
+              </a>
             </div>
-          </div>
-          <div className={ContactFormStyles.screen_body}>
-            <div
-              className={`${ContactFormStyles.screen_body_item} ${ContactFormStyles.left} `}
-            >
-              <div className={ContactFormStyles.app_title}>
-                <span>CONTACT-</span>
-                <span>US</span>
-              </div>
-              <div className={ContactFormStyles.app_contact}>
-                CONTACT INFO : +62 81 314 928 595
-              </div>
+            <div className={ContactFormStyles.link}>
+              <a>
+                <img
+                  src="https://i.postimg.cc/W4Znvrry/codepen.png"
+                  alt="codepen"
+                />
+              </a>
             </div>
-            <div className={ContactFormStyles.screen_body_item}>
-              <div className={ContactFormStyles.app_form}>
-                <div className={ContactFormStyles.app_form_group}>
-                  <input
-                    className={ContactFormStyles.app_form_control}
-                    placeholder="NAME"
-                  />
-                </div>
-                <div className={ContactFormStyles.app_form_group}>
-                  <input
-                    className={ContactFormStyles.app_form_control}
-                    placeholder="EMAIL"
-                  />
-                </div>
-                <div className={ContactFormStyles.app_form_group}>
-                  <input
-                    className={ContactFormStyles.app_form_control}
-                    placeholder="CONTACT NO"
-                  />
-                </div>
-                <div
-                  className={`${ContactFormStyles.app_form_group} ${ContactFormStyles.message} `}
-                >
-                  <input
-                    className={ContactFormStyles.app_form_control}
-                    placeholder="MESSAGE"
-                  />
-                </div>
-                <div
-                  className={`${ContactFormStyles.app_form_group} ${ContactFormStyles.buttons}`}
-                >
-                  <button className="button">SEND</button>
-                </div>
-              </div>
+            <div className={ContactFormStyles.link}>
+              <a href="www.google.com">
+                <img
+                  src="https://i.postimg.cc/NjLfyjPB/email.png"
+                  alt="email"
+                />
+              </a>
             </div>
           </div>
         </div>
+        <div className={ContactFormStyles.contact_form_wrapper}>
+          <form ref={form} onSubmit={sendEmail}>
+            <div className={ContactFormStyles.form_item}>
+              <input type="text" name="user_name" required />
+              <label>Name:</label>
+            </div>
+            <div className={ContactFormStyles.form_item}>
+              <input type="email" name="user_email" required />
+              <label>Email:</label>
+            </div>
+            <div className={ContactFormStyles.form_item}>
+              <textarea className="" name="message" required></textarea>
+              <label>Message:</label>
+            </div>
+            <button type="submit" value="Send" className="button">
+              Send
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };

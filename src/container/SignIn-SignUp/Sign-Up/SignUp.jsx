@@ -73,7 +73,6 @@ export const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(values);
-    console.log(values.phoneNo);
 
     try {
       const response = await axios.post(

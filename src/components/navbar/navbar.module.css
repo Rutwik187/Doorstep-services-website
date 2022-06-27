@@ -19,6 +19,7 @@
 }
 
 .navbar_links_logo img {
+  filter: hue-rotate(220deg) drop-shadow(2px 4px 4px #0006);
   width: 62.56px;
 }
 
