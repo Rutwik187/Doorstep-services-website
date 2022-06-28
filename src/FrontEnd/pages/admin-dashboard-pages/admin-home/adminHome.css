@@ -1,0 +1,12 @@
+.sidebar-container {
+  display: flex;
+  margin-top: 10px;
+}
+.home {
+  flex: 4;
+}
+
+.homeWidgets {
+  display: flex;
+  margin: 20px;
+}
