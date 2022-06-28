@@ -54,7 +54,8 @@ function App() {
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Categories" element={<ServicesCategories />} />
-        {/* <Route path="/dashboard" element={<Dashboard />} /> */}
+        <Route path="/Contact-Us" element={<ContactUs />} />
+
 
         <Route path="/Orders" element={<ClientOrders />} />
 

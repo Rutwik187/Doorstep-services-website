@@ -24,7 +24,7 @@ export const Navbar = () => {
             <Link to="/RegisterAsProfessional">Register As Professional</Link>
           </p>
           <p>
-            <Link to="/Orders">Orders</Link>
+            <Link to="/admin-dashboard">Admin Dashboard</Link>
           </p>
           <p>
             <Link to="/ContactUs">Contact Us</Link>
@@ -70,6 +70,9 @@ export const Navbar = () => {
                 </Link>
               </p>
               <p>
+                <Link to="/admin-dashboard">Admin Dashboard</Link>
+              </p>
+              <p>
                 <Link to="/ContactUs">Contact Us</Link>
               </p>
             </div>
@@ -84,7 +87,7 @@ export const Navbar = () => {
             <div className={navbarStyles.circular_close_button}>
               <RiCloseLine
                 color="#ffffff"
-                size={50}
+                size={35}
                 onClick={() => setToggleMenu(false)}
               />
             </div>
