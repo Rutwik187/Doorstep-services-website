@@ -28,21 +28,21 @@ export const testimonials = [
         id: 'testimonial_1',
         swiperId: 'SwiperTestimonial_1',
         name: 'John Doe',
-        comment: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam iste quidem velit! Ratione similique reiciendis, dicta totam sed.',
+        comment: 'Very good service, very friendly and professional. They are polite and highly skilled I recommend them to anyone.',
         avatar: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
     },
     {
         id: 'testimonial_2',
         swiperId: 'SwiperTestimonial_2',
         name: 'Prashant',
-        comment: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam iste quidem velit! Ratione similique reiciendis, dicta totam sed.',
+        comment: 'Fast and friendly service.Professionals here are very skilled and serious about their work. I recommend them to anyone.',
         avatar: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
     },
     {
         id: 'testimonial_3',
         swiperId: 'SwiperTestimonial_3',
         name: 'Yash',
-        comment: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam iste quidem velit! Ratione similique reiciendis, dicta totam sed.',
+        comment: 'super fast service. They reached at the door at very next day I ordered it. I Highly recommend them to anyone.',
         avatar: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
     }
 ]
@@ -85,23 +85,22 @@ export const stepsData = [
 export const AccordionData = [
     {
         id: 'question_1',
-        question: 'What do you call a dog magician?',
-        answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quidem, quaerat ipsam illo atque dignissimos quam accusamus'
-
+        question: 'How long does it take to professional to reach?',
+        answer: 'It depends on the distance between you and the professional. It can take up to 2 days to reach the professional.'
     },
     {
         id: 'question_2',
-        question: 'What do you call a funny mountain?',
-        answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quidem, quaerat ipsam illo atque dignissimos quam accusamus'
+        question: 'What is the minimum budget for the service?',
+        answer: 'It depends on the service you want to fix. It can be between ₹1000 to ₹5000.'
     },
     {
         id: 'question_3',
-        question: 'What do you call a funny mountain?',
-        answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quidem, quaerat ipsam illo atque dignissimos quam accusamus'
+        question: 'What is experience level of the professional?',
+        answer: 'They are highly skilled and particular about their professional. They have a minimum of 3 years of experience.'
     },
     {
         id: 'question_4',
-        question: 'What did the astronaut say when he crashed into the moon?',
-        answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quidem, quaerat ipsam illo atque dignissimos quam accusamus'
+        question: 'How does refund work?',
+        answer: 'If your are not satisfied with the service, you can cancel the service and get the money back.'
     }
 ];

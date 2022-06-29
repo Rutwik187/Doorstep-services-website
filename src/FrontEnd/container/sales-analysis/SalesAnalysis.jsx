@@ -10,8 +10,8 @@ export const SalesAnalysis = () => {
         <div className={SalesAnalysisStyles.SaleAnalysisContainer_content}>
           <h2>Analyze your sales and Performance</h2>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda,
-            perspiciatis!
+            You can analyze your sales and performance by using the charts and
+            make the decisions accordingly.
           </p>
         </div>
         <div className={SalesAnalysisStyles.SaleAnalysisContainer_list}>
@@ -30,8 +30,8 @@ export const SalesAnalysis = () => {
             >
               <h5>Sales Tracking</h5>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quisquam, quidem.
+                Track your sales and analyze your performance by using the
+                charts.
               </p>
             </div>
           </div>
@@ -48,11 +48,8 @@ export const SalesAnalysis = () => {
                 SalesAnalysisStyles.SaleAnalysisContainer_list_item_content
               }
             >
-              <h5>Sales Tracking</h5>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quisquam, quidem.
-              </p>
+              <h5>Freedom to choose client</h5>
+              <p>You can choose to accept or reject the client request.</p>
             </div>
           </div>
           <div className={SalesAnalysisStyles.SaleAnalysisContainer_list_item}>
@@ -68,10 +65,10 @@ export const SalesAnalysis = () => {
                 SalesAnalysisStyles.SaleAnalysisContainer_list_item_content
               }
             >
-              <h5>Sales Tracking</h5>
+              <h5>Notifications</h5>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quisquam, quidem.
+                Get notified instantly about the status and requests from the
+                client.
               </p>
             </div>
           </div>
