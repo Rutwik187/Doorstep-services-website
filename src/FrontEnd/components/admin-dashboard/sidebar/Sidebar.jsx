@@ -5,8 +5,6 @@ import {
   TrendingUp,
   PermIdentity,
   Storefront,
-  AttachMoney,
-  BarChart,
   MailOutline,
   DynamicFeed,
   ChatBubbleOutline,
@@ -47,20 +45,24 @@ export default function Sidebar() {
                 Users
               </li>
             </Link>
-            <Link to="/products" className="link">
+            <Link to="/services" className="link">
               <li className="sidebarListItem">
                 <Storefront className="sidebarIcon" />
-                Products
+                Services
               </li>
             </Link>
-            <li className="sidebarListItem">
-              <AttachMoney className="sidebarIcon" />
-              Transactions
-            </li>
-            <li className="sidebarListItem">
-              <BarChart className="sidebarIcon" />
-              Reports
-            </li>
+            <Link to="/professionals" className="link">
+              <li className="sidebarListItem">
+                <WorkOutline className="sidebarIcon" />
+                Professionals
+              </li>
+            </Link>
+            <Link to="/admins" className="link">
+              <li className="sidebarListItem">
+                <PermIdentity className="sidebarIcon" />
+                Admins
+              </li>
+            </Link>
           </ul>
         </div>
         <div className="sidebarMenu">
@@ -83,10 +85,6 @@ export default function Sidebar() {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Staff</h3>
           <ul className="sidebarList">
-            <li className="sidebarListItem">
-              <WorkOutline className="sidebarIcon" />
-              Manage
-            </li>
             <li className="sidebarListItem">
               <Timeline className="sidebarIcon" />
               Analytics

@@ -52,16 +52,15 @@ export const SignIn = () => {
           withCredentials: true,
         }
       );
-      console.log(JSON.stringify(response?.data));
+
       console.log(JSON.stringify(response));
       const accessToken = response?.data?.accessToken;
-      // const roles = response?.data?.roles;
+      const roles = response?.data?.roles;
       setAuth({
         email: values.email,
         password: values.password,
         accessToken,
       });
-      console.log(values);
       setSuccess(true);
     } catch (err) {
       if (!err?.response) {

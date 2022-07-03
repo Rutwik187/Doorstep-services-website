@@ -1,12 +1,12 @@
 import React from "react";
-import Aos from "aos";
-import "aos/dist/aos.css";
+// import Aos from "aos";
+// import "aos/dist/aos.css";
 import "./Feature.module.css";
 import featureStyles from "./Feature.module.css";
 import { featureItems } from "../../Data/UI-Data";
 
 export const Feature = () => {
-  Aos.init({ duration: 800 });
+  // Aos.init({ duration: 800 });
   return (
     <section className="section_margin">
       <div className={featureStyles.container}>
@@ -18,7 +18,7 @@ export const Feature = () => {
           {featureItems.map((item) => (
             <div
               key={item.id}
-              data-aos="zoom-in-up"
+              // data-aos="zoom-in-up"
               className={featureStyles.feature_item}
             >
               <div className={featureStyles.feature_item_icon}>

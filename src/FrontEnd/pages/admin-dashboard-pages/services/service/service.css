@@ -1,43 +1,32 @@
-.product {
+.service {
   flex: 4;
   padding: 20px;
   font-size: 1.5rem;
 }
 
-.productTitleContainer {
+.serviceTitleContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.productAddButton {
-  width: 80px;
-  border: none;
-  padding: 5px;
-  background-color: teal;
-  color: white;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.productTop {
+.serviceTop {
   display: flex;
 }
 
-.productTopLeft,
-.productTopRight {
+.serviceTopLeft,
+.serviceTopRight {
   flex: 1;
 }
 
-.productTopRight {
+.serviceTopRight {
   padding: 20px;
   margin: 20px;
   -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
 }
 
-.productInfoImg {
+.serviceInfoImg {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -45,63 +34,64 @@
   margin-right: 20px;
 }
 
-.productInfoTop {
+.serviceInfoTop {
   display: flex;
   align-items: center;
 }
 
-.productName {
+.serviceName {
   font-weight: 600;
 }
 
-.productInfoBottom {
+.serviceInfoBottom {
   margin-top: 10px;
 }
 
-.productInfoItem {
+.serviceInfoItem {
   width: 150px;
   display: flex;
   justify-content: space-between;
 }
 
-.productInfoValue {
+.serviceInfoValue {
   font-weight: 300;
 }
 
-.productBottom {
+.serviceBottom {
   padding: 20px;
   margin: 20px;
   -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
 }
 
-.productForm {
+.serviceForm {
   display: flex;
   justify-content: space-between;
 }
 
-.productFormLeft {
+.serviceFormLeft {
   display: flex;
   flex-direction: column;
 }
 
-.productFormLeft > label {
+.serviceFormLeft > label {
   margin-bottom: 10px;
   color: gray;
 }
 
-.productFormLeft > input {
+.serviceFormLeft > input {
+  height: 40px;
   margin-bottom: 10px;
   border: none;
   padding: 5px;
   border-bottom: 1px solid gray;
 }
 
-.productFormLeft > select {
+.serviceFormLeft > select {
   margin-bottom: 10px;
 }
 
-.productUploadImg {
+.serviceUploadImg {
   width: 100px;
   height: 100px;
   border-radius: 10px;
@@ -109,18 +99,18 @@
   margin-right: 20px;
 }
 
-.productFormRight {
+.serviceFormRight {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
 
-.productUpload {
+.serviceUpload {
   display: flex;
   align-items: center;
 }
 
-.productButton {
+.serviceButton {
   border: none;
   padding: 5px;
   border-radius: 5px;

@@ -54,42 +54,44 @@ export const Navbar = () => {
           />
         )}
         {toggleMenu && (
-          <div
-            className={`${navbarStyles.navbar_menu_container} ${navbarStyles.scale_up_center}`}
-          >
-            <div className={navbarStyles.navbar_menu_container_links}>
-              <p>
-                <Link to="/">Home</Link>
-              </p>
-              <p>
-                <Link to="/Categories">Categories</Link>
-              </p>
-              <p>
-                <Link to="/RegisterAsProfessional">
-                  Register As Professional
+          <div className={navbarStyles.navbar_menu_background}>
+            <div
+              className={`${navbarStyles.navbar_menu_container} ${navbarStyles.scale_up_center}`}
+            >
+              <div className={navbarStyles.navbar_menu_container_links}>
+                <p>
+                  <Link to="/">Home</Link>
+                </p>
+                <p>
+                  <Link to="/Categories">Categories</Link>
+                </p>
+                <p>
+                  <Link to="/RegisterAsProfessional">
+                    Register As Professional
+                  </Link>
+                </p>
+                <p>
+                  <Link to="/admin-dashboard">Admin Dashboard</Link>
+                </p>
+                <p>
+                  <Link to="/ContactUs">Contact Us</Link>
+                </p>
+              </div>
+              <div className={navbarStyles.navbar_menu_container_links_sign}>
+                <Link to="/SignIn">
+                  <p>Sign in</p>
                 </Link>
-              </p>
-              <p>
-                <Link to="/admin-dashboard">Admin Dashboard</Link>
-              </p>
-              <p>
-                <Link to="/ContactUs">Contact Us</Link>
-              </p>
-            </div>
-            <div className={navbarStyles.navbar_menu_container_links_sign}>
-              <Link to="/SignIn">
-                <p>Sign in</p>
-              </Link>
-              <Link to="/SignUp">
-                <button type="button">Sign up</button>
-              </Link>
-            </div>
-            <div className={navbarStyles.circular_close_button}>
-              <RiCloseLine
-                color="#ffffff"
-                size={35}
-                onClick={() => setToggleMenu(false)}
-              />
+                <Link to="/SignUp">
+                  <button type="button">Sign up</button>
+                </Link>
+              </div>
+              <div className={navbarStyles.circular_close_button}>
+                <RiCloseLine
+                  color="#ffffff"
+                  size={35}
+                  onClick={() => setToggleMenu(false)}
+                />
+              </div>
             </div>
           </div>
         )}

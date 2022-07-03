@@ -1,12 +1,12 @@
-import "./productList.css";
+import "./serviceList.css";
 import { DataGrid } from "@mui/x-data-grid";
 import { DeleteOutline } from "@mui/icons-material";
-import allServices from "../../../Data/ServicesImports";
+import allServices from "../../../../Data/ServicesImports";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import Sidebar from "../../../components/admin-dashboard/sidebar/Sidebar";
+import Sidebar from "../../../../components/admin-dashboard/sidebar/Sidebar";
 
-export default function ProductList() {
+export default function ServiceList() {
   const [data, setData] = useState(allServices);
 
   const handleDelete = (serviceId) => {
@@ -20,7 +20,7 @@ export default function ProductList() {
       headerName: "Service",
       width: 400,
       renderCell: (params) => {
-        return <div className="productListItem">{params.row.desc}</div>;
+        return <div className="serviceListItem">{params.row.desc}</div>;
       },
     },
 
@@ -41,11 +41,11 @@ export default function ProductList() {
       renderCell: (params) => {
         return (
           <>
-            <Link to={"/product/" + params.row.serviceId}>
-              <button className="productListEdit">Edit</button>
+            <Link to={"/service/" + params.row.serviceId}>
+              <button className="serviceListEdit">Edit</button>
             </Link>
             <DeleteOutline
-              className="productListDelete"
+              className="serviceListDelete"
               onClick={() => handleDelete(params.row.serviceId)}
             />
           </>
@@ -55,20 +55,25 @@ export default function ProductList() {
   ];
 
   return (
-    <div className="sidebar-container">
-      <Sidebar />
-      <div className="productList">
-        <DataGrid
-          sx={{
-            fontSize: "1.5rem",
-          }}
-          rows={data}
-          disableSelectionOnClick
-          columns={columns}
-          pageSize={8}
-          checkboxSelection
-        />
+    <div className="serviceListContainer">
+      <div className="sidebar-container">
+        <Sidebar />
+        <div className="serviceList">
+          <DataGrid
+            sx={{
+              fontSize: "1.5rem",
+            }}
+            rows={data}
+            disableSelectionOnClick
+            columns={columns}
+            pageSize={8}
+            checkboxSelection
+          />
+        </div>
       </div>
+      <Link to="/newService">
+        <button className="serviceAddButton">Create Service</button>
+      </Link>
     </div>
   );
 }

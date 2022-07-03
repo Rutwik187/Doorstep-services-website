@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { AccordionData } from "../../Data/UI-Data";
 import { IconContext } from "react-icons";
 import { FiPlus, FiMinus } from "react-icons/fi";
@@ -20,8 +21,10 @@ const Accordion = () => {
     <IconContext.Provider value={{ color: "#00FFB9", size: "25px" }}>
       <div className={AccordionStyles.AccordionSection}>
         <div className={AccordionStyles.AccordionSection_header}>
-          <h2>Frequestly Asked Questions</h2>
-          <button className="button">Contact Us</button>
+          <h2>Frequently Asked Questions</h2>
+          <Link to="/Contact-Us">
+            <button className="button">Contact Us</button>
+          </Link>
         </div>
 
         <div className={AccordionStyles.Accordion_FAQs}>

@@ -19,7 +19,6 @@
 }
 
 .navbar_links_logo img {
-  filter: hue-rotate(220deg) drop-shadow(2px 4px 4px #0006);
   width: 62.56px;
 }
 
@@ -129,7 +128,7 @@
 }
 
 .navbar_menu_container_links a {
-  font-size: 3rem;
+  font-size: 1.8rem;
 }
 
 .navbar_menu_container_links_sign {

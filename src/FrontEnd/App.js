@@ -32,16 +32,19 @@ import { Coding, CookingAndBaking, FitnessAndGym, HealthAndDiet, MusicInstructor
 
 // pages for admin dashboard
 
-// import Sidebar from "./components/sidebar/Sidebar";
-
-
 import AdminHome from "./pages/admin-dashboard-pages/admin-home/adminHome";
-import UserList from "./pages/admin-dashboard-pages/userList/UserList";
-import User from "./pages/admin-dashboard-pages/user/User";
-import NewUser from "./pages/admin-dashboard-pages/newUser/NewUser";
-import ProductList from "./pages/admin-dashboard-pages/productList/ProductList";
-import Product from "./pages/admin-dashboard-pages/product/Product";
-import NewProduct from "./pages/admin-dashboard-pages/newProduct/NewProduct";
+import UserList from "./pages/admin-dashboard-pages/users/userList/UserList";
+import User from "./pages/admin-dashboard-pages/users/user/User";
+
+import ServiceList from "./pages/admin-dashboard-pages/services/serviceList/ServiceList";
+import Service from "./pages/admin-dashboard-pages/services/service/Service";
+import NewService from "./pages/admin-dashboard-pages/services/newServices/NewService";
+import ProfessionalList from "./pages/admin-dashboard-pages/professionals/professionalList/ProfessionalList";
+import Professional from "./pages/admin-dashboard-pages/professionals/professional/Professional";
+import NewProfessional from "./pages/admin-dashboard-pages/professionals/newProfessional/NewProfessional";
+import AdminList from "./pages/admin-dashboard-pages/admins/adminList/AdminList";
+import Admin from "./pages/admin-dashboard-pages/admins/admin/Admin";
+import NewAdmin from "./pages/admin-dashboard-pages/admins/newAdmin/NewAdmin";
 
 
 function App() {
@@ -64,19 +67,32 @@ function App() {
 
         </Route>
         <Route path="/users" element={<UserList />}>
-
         </Route>
         <Route path="/user/:userId" element={<User />}>
         </Route>
-        <Route path="/newUser" element={<NewUser />}>
+        <Route path="/services" element={<ServiceList />}>
         </Route>
-        <Route path="/products" element={<ProductList />}>
+        <Route path="/service/:ServiceId" element={<Service />}>
         </Route>
-        <Route path="/product/:productId" element={<Product />}>
+        <Route path="/newService" element={<NewService />}>
         </Route>
-        <Route path="/newproduct" element={<NewProduct />}>
 
+        <Route path="/professionals" element={<ProfessionalList />}>
         </Route>
+        <Route path="/professional/:professionalId" element={<Professional />}>
+        </Route>
+        <Route path="/newProfessional" element={<NewProfessional />}>
+        </Route>
+
+        <Route path="/admins" element={<AdminList />}>
+        </Route>
+        <Route path="/admin/:adminId" element={<Admin />}>
+        </Route>
+        <Route path="/newAdmin" element={<NewAdmin />}>
+        </Route>
+
+
+
 
 
         {/* Link in pages/services/ServicesCategories*/}

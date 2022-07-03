@@ -1,0 +1,53 @@
+.adminList {
+  height: 80vh;
+  flex: 4;
+}
+
+.adminListContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.adminAddButton {
+  position: relative;
+
+  left: 50%;
+  top: -12rem;
+  width: 200px;
+  border: none;
+  padding: 15px;
+  background-color: #3bb077;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+}
+
+.adminList {
+  display: flex;
+
+  align-items: center;
+}
+
+.adminListImg {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.adminListEdit {
+  border: none;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #3bb077;
+  color: white;
+  cursor: pointer;
+  margin-right: 2rem;
+}
+
+.adminListDelete {
+  color: red;
+  cursor: pointer;
+}

@@ -1,10 +1,10 @@
 import "./userList.css";
 import { DataGrid } from "@mui/x-data-grid";
 import { DeleteOutline } from "@mui/icons-material";
-import { userRows } from "../../../Data/dummyData";
+import { userRows } from "../../../../Data/dummyData";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import Sidebar from "../../../components/admin-dashboard/sidebar/Sidebar";
+import Sidebar from "../../../../components/admin-dashboard/sidebar/Sidebar";
 
 export default function UserList() {
   const [data, setData] = useState(userRows);
@@ -18,25 +18,16 @@ export default function UserList() {
     {
       field: "user",
       headerName: "User",
-      width: 200,
+      width: 300,
       renderCell: (params) => {
-        return (
-          <div className="userListUser">
-            <img className="userListImg" src={params.row.avatar} alt="" />
-            {params.row.username}
-          </div>
-        );
+        return <div className="userListUser">{params.row.username}</div>;
       },
     },
     { field: "email", headerName: "Email", width: 200 },
+
     {
-      field: "status",
-      headerName: "Status",
-      width: 120,
-    },
-    {
-      field: "transaction",
-      headerName: "Transaction Volume",
+      field: "location",
+      headerName: "Location",
       width: 160,
     },
     {
@@ -60,20 +51,25 @@ export default function UserList() {
   ];
 
   return (
-    <div className="sidebar-container">
-      <Sidebar />
-      <div className="userList">
-        <DataGrid
-          sx={{
-            fontSize: "1.5rem",
-          }}
-          rows={data}
-          disableSelectionOnClick
-          columns={columns}
-          pageSize={10}
-          checkboxSelection
-        />
+    <div className="userListContainer">
+      <div className="sidebar-container">
+        <Sidebar />
+        <div className="userList">
+          <DataGrid
+            sx={{
+              fontSize: "1.5rem",
+            }}
+            rows={data}
+            disableSelectionOnClick
+            columns={columns}
+            pageSize={8}
+            checkboxSelection
+          />
+        </div>
       </div>
+      <Link to="/SignUp">
+        <button className="userAddButton">Create User</button>
+      </Link>
     </div>
   );
 }
