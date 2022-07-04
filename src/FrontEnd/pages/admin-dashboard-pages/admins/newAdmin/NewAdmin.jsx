@@ -30,7 +30,7 @@ export default function NewAdmin() {
           </div>
 
           <div className="newAdminItem">
-            <label>Role</label>
+            <label>Position</label>
             <input type="text" placeholder="Manager" />
           </div>
           <button className="newAdminButton">Create</button>
