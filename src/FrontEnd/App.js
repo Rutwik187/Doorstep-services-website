@@ -10,7 +10,6 @@ import { ContactUs } from './pages/Contact-Us';
 import { RegisterAsProfessional } from './pages/Register-as-professional';
 import { ServicesCategories } from './pages/Services/ServicesCategories';
 import { ClientOrders } from './container/Orders-Dashboards/ClientOrders'
-// import { ProfessionalOrders } from './container/Orders-Dashboards/ProfessionalOrders'
 import { SignUp } from './container/SignIn-SignUp/Sign-Up/SignUp';
 import { SignIn } from './container/SignIn-SignUp/Sign-In/SignIn';
 
@@ -45,6 +44,7 @@ import NewProfessional from "./pages/admin-dashboard-pages/professionals/newProf
 import AdminList from "./pages/admin-dashboard-pages/admins/adminList/AdminList";
 import Admin from "./pages/admin-dashboard-pages/admins/admin/Admin";
 import NewAdmin from "./pages/admin-dashboard-pages/admins/newAdmin/NewAdmin";
+import CheckoutForm from './container/checkout-form/CheckoutForm';
 
 
 function App() {
@@ -58,42 +58,23 @@ function App() {
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Categories" element={<ServicesCategories />} />
         <Route path="/Contact-Us" element={<ContactUs />} />
-
-
+        <Route path="/checkout/:service" element={<CheckoutForm />} />
         <Route path="/Orders" element={<ClientOrders />} />
+        <Route path="/admin-dashboard" element={<AdminHome />} />
 
+        <Route path="/users" element={<UserList />} />
+        <Route path="/user/:userId" element={<User />} />
+        <Route path="/services" element={<ServiceList />} />
+        <Route path="/service/:ServiceId" element={<Service />} />
+        <Route path="/newService" element={<NewService />} />
 
-        <Route path="/admin-dashboard" element={<AdminHome />}>
+        <Route path="/professionals" element={<ProfessionalList />} />
+        <Route path="/professional/:professionalId" element={<Professional />} />
+        <Route path="/newProfessional" element={<NewProfessional />} />
 
-        </Route>
-        <Route path="/users" element={<UserList />}>
-        </Route>
-        <Route path="/user/:userId" element={<User />}>
-        </Route>
-        <Route path="/services" element={<ServiceList />}>
-        </Route>
-        <Route path="/service/:ServiceId" element={<Service />}>
-        </Route>
-        <Route path="/newService" element={<NewService />}>
-        </Route>
-
-        <Route path="/professionals" element={<ProfessionalList />}>
-        </Route>
-        <Route path="/professional/:professionalId" element={<Professional />}>
-        </Route>
-        <Route path="/newProfessional" element={<NewProfessional />}>
-        </Route>
-
-        <Route path="/admins" element={<AdminList />}>
-        </Route>
-        <Route path="/admin/:adminId" element={<Admin />}>
-        </Route>
-        <Route path="/newAdmin" element={<NewAdmin />}>
-        </Route>
-
-
-
-
+        <Route path="/admins" element={<AdminList />} />
+        <Route path="/admin/:adminId" element={<Admin />} />
+        <Route path="/newAdmin" element={<NewAdmin />} />
 
         {/* Link in pages/services/ServicesCategories*/}
         <Route path="/Categories/appliance_repair" element={<ApplianceRepair />} />

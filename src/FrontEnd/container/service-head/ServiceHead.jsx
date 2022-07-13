@@ -1,5 +1,5 @@
 import ServiceHeadStyles from "./ServiceHead.module.css";
-import React from "react";
+import { Link } from "react-router-dom";
 
 export const ServiceHead = (props) => {
   return (
@@ -14,7 +14,9 @@ export const ServiceHead = (props) => {
         </div>
       </div>
       <div className={ServiceHeadStyles.serviceHead_container_button}>
-        <button className="button">Book Service</button>
+        <Link to={`/checkout/${props.title}`}>
+          <button className="button">Book Service</button>
+        </Link>
       </div>
     </>
   );

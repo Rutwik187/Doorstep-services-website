@@ -95,7 +95,7 @@ export const popularServices = [
     },
     {
         id: 'fitness_and_gym',
-        desc: 'Fitness',
+        desc: 'Fitness and Gym',
         img: fitness_and_gym,
         category: 'online_instructor',
         status: "active",
