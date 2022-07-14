@@ -21,6 +21,7 @@ export default function NewProfessional() {
   };
 
   const handleSubmit = async (e) => {
+    console.log(email, password);
     e.preventDefault();
 
     try {
@@ -44,12 +45,6 @@ export default function NewProfessional() {
       console.log(JSON.stringify(response));
       const accessToken = response?.data?.accessToken;
       const roles = response?.data?.roles;
-      // setAuth({
-      //   email: values.email,
-      //   password: values.password,
-      //   accessToken,
-      // });
-      // setSuccess(true);
     } catch (err) {
       if (!err?.response) {
         console.log("No Server Response");

@@ -1,7 +1,6 @@
 import { useState, useContext } from "react";
 import "../CommonSignInSignUp.css";
 import { FormInput } from "../Form-Inputs/FormInput";
-
 import AuthContext from "../../../context/AuthProvider";
 
 import axios from "../../../api/axios";
