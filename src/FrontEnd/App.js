@@ -70,7 +70,7 @@ function App() {
 
         <Route path="/professionals" element={<ProfessionalList />} />
         <Route path="/professional/:professionalId" element={<Professional />} />
-        <Route path="/newProfessional" element={<NewProfessional />} />
+        <Route path="/createProfessional" element={<NewProfessional />} />
 
         <Route path="/admins" element={<AdminList />} />
         <Route path="/admin/:adminId" element={<Admin />} />

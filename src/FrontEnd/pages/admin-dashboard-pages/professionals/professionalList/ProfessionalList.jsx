@@ -81,7 +81,7 @@ export default function ProfessionalList() {
           />
         </div>
       </div>
-      <Link to="/newProfessional">
+      <Link to="/createProfessional">
         <button className="professionalAddButton">Create Professional</button>
       </Link>
     </div>

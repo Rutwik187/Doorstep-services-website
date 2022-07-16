@@ -3,7 +3,7 @@ import "../CommonSignInSignUp.css";
 import { FormInput } from "../Form-Inputs/FormInput";
 import axios from "../../../api/axios";
 
-const SIGN_UP_URL = "/register";
+const SIGN_UP_URL = "/user/register";
 
 export const SignUp = () => {
   // const [success, setSuccess] = useState(false);

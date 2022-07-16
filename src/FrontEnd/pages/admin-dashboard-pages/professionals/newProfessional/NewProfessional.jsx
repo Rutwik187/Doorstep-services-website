@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Sidebar from "../../../../components/admin-dashboard/sidebar/Sidebar";
 import "./newProfessional.css";
 import axios from "../../../../api/axios";
+
+import AuthContext from "../../../../context/AuthProvider";
 
 const NEW_PROFESSIONAL_URL = "/admin/createProfessional";
 
@@ -21,7 +23,6 @@ export default function NewProfessional() {
   };
 
   const handleSubmit = async (e) => {
-    console.log(email, password);
     e.preventDefault();
 
     try {

@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export default axios.create({
-    baseURL: 'https://door-step-services.herokuapp.com/api'
+    baseURL: 'https://localhost:300/api'
 });
