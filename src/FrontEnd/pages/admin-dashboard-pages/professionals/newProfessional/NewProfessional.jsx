@@ -3,8 +3,6 @@ import Sidebar from "../../../../components/admin-dashboard/sidebar/Sidebar";
 import "./newProfessional.css";
 import axios from "../../../../api/axios";
 
-import AuthContext from "../../../../context/AuthProvider";
-
 const NEW_PROFESSIONAL_URL = "/admin/createProfessional";
 
 export default function NewProfessional() {
