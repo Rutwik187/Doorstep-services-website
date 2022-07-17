@@ -5,8 +5,18 @@ import "./adminHome.css";
 import { userData } from "../../../Data/dummyData";
 import WidgetSm from "../../../components/admin-dashboard/widgetSm/WidgetSm";
 import WidgetLg from "../../../components/admin-dashboard/widgetLg/WidgetLg";
+import { Navigate, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function Home() {
+  const navigate = useNavigate();
+
+  // useEffect(() => {
+  //   if (localStorage.getItem("role") !== "user") {
+  //     navigate("/");
+  //   }
+  // }, []);
+
   return (
     <div className="sidebar-container">
       <Sidebar />

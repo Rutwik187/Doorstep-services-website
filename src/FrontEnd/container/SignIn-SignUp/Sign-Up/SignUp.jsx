@@ -11,8 +11,9 @@ export const SignUp = () => {
 
   const [values, setValues] = useState({
     username: "",
+    fullName: "",
     email: "",
-    phoneNo: "",
+    phone: "",
     password: "",
     confirmPassword: "",
   });
@@ -31,6 +32,16 @@ export const SignUp = () => {
     },
     {
       id: 2,
+      name: "fullName",
+      type: "text",
+      placeholder: "Full Name",
+      errorMessage:
+        "Username should be 3-16 characters and shouldn't include any special character!",
+      label: "Full Name",
+      required: true,
+    },
+    {
+      id: 3,
       name: "email",
       type: "email",
       placeholder: "Email",
@@ -39,8 +50,8 @@ export const SignUp = () => {
       required: true,
     },
     {
-      id: 3,
-      name: "phoneNo",
+      id: 4,
+      name: "phone",
       type: "text",
       placeholder: "Phone Number",
       errorMessage: "10 digits required!",
@@ -48,7 +59,7 @@ export const SignUp = () => {
       required: true,
     },
     {
-      id: 4,
+      id: 5,
       name: "password",
       type: "password",
       placeholder: "Password",
@@ -59,13 +70,13 @@ export const SignUp = () => {
       required: true,
     },
     {
-      id: 5,
+      id: 6,
       name: "confirmPassword",
       type: "password",
       placeholder: "Confirm Password",
       errorMessage: "Passwords don't match!",
       label: "Confirm Password",
-      pattern: values.password,
+      pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
       required: true,
     },
   ];
@@ -77,10 +88,11 @@ export const SignUp = () => {
       const response = await axios.post(
         SIGN_UP_URL,
         JSON.stringify({
-          name: values.username,
+          username: values.username,
+          fullName: values.fullName,
           email: values.email,
           password: values.password,
-          phoneNo: values.phoneNo,
+          phone: values.phone,
         }),
         {
           headers: { "Content-Type": "application/json" },
@@ -102,6 +114,7 @@ export const SignUp = () => {
       }
     }
     console.log(errMsg);
+    console.log(values);
   };
 
   const onChange = (e) => {

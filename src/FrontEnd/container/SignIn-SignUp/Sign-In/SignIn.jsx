@@ -2,11 +2,13 @@ import { useState, useContext } from "react";
 import "../CommonSignInSignUp.css";
 import { FormInput } from "../Form-Inputs/FormInput";
 import AuthContext from "../../../context/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 import axios from "../../../api/axios";
 const LOGIN_URL = "/login";
 
 export const SignIn = () => {
+  const navigate = useNavigate();
   const { setAuth } = useContext(AuthContext);
 
   const [success, setSuccess] = useState(false);
@@ -34,7 +36,7 @@ export const SignIn = () => {
       errorMessage:
         "Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character!",
       label: "Password",
-      pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
+      // pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
       required: true,
     },
   ];
@@ -46,6 +48,7 @@ export const SignIn = () => {
       const response = await axios.post(
         LOGIN_URL,
         JSON.stringify({ email: values.email, password: values.password }),
+
         {
           headers: { "Content-Type": "application/json" },
           withCredentials: true,
@@ -53,12 +56,19 @@ export const SignIn = () => {
       );
 
       console.log(JSON.stringify(response));
-      const accessToken = response?.data?.accessToken;
+      navigate("/");
+      const token = response?.data?.token;
+      const role = response.data.user.role;
+      console.log(token);
+      console.log(role);
+
+      localStorage.setItem("token", token);
+      localStorage.setItem("role", role);
       const roles = response?.data?.roles;
       setAuth({
         email: values.email,
         password: values.password,
-        accessToken,
+        token,
       });
       setSuccess(true);
     } catch (err) {

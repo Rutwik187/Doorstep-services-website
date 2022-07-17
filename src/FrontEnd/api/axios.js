@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export default axios.create({
-    baseURL: 'https://doorstep-services-website-liard.vercel.app/api'
+    baseURL: 'https://door-step-services.herokuapp.com/api'
 });

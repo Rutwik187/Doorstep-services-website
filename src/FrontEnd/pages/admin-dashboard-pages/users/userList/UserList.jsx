@@ -3,11 +3,31 @@ import { DataGrid } from "@mui/x-data-grid";
 import { DeleteOutline } from "@mui/icons-material";
 import { userRows } from "../../../../Data/dummyData";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "../../../../api/axios";
 import Sidebar from "../../../../components/admin-dashboard/sidebar/Sidebar";
 
 export default function UserList() {
-  const [data, setData] = useState(userRows);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const response = await axios.get("user/getUser");
+        setData(response.data);
+      } catch (err) {
+        if (err.response) {
+          // Not in the 200 response range
+          console.log(err.response.data);
+          console.log(err.response.status);
+          console.log(err.response.headers);
+        } else {
+          console.log("Error", err);
+        }
+      }
+    };
+    fetchUserData();
+  }, []);
 
   const handleDelete = (id) => {
     setData(data.filter((item) => item.id !== id));
