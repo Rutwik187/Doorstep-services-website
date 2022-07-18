@@ -62,8 +62,8 @@ export const SignIn = () => {
       console.log(token);
       console.log(role);
 
-      localStorage.setItem("token", token);
-      localStorage.setItem("role", role);
+      // localStorage.setItem("token", token);
+      // localStorage.setItem("role", role);
       const roles = response?.data?.roles;
       setAuth({
         email: values.email,
