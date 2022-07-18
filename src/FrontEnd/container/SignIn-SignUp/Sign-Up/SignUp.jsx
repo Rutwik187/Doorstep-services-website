@@ -99,7 +99,6 @@ export const SignUp = () => {
           withCredentials: true,
         }
       );
-      console.log("first");
       console.log(response);
       console.log(response?.data);
       console.log(response?.accessToken);
@@ -114,7 +113,6 @@ export const SignUp = () => {
       }
     }
     console.log(errMsg);
-    console.log(values);
   };
 
   const onChange = (e) => {

@@ -1,9 +1,9 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import Sidebar from "../../../../components/admin-dashboard/sidebar/Sidebar";
 import "./newProfessional.css";
 import axios from "../../../../api/axios";
 
-const NEW_PROFESSIONAL_URL = "/admin/createProfessional";
+const NEW_PROFESSIONAL_URL = "/professional/createProfessional";
 
 export default function NewProfessional() {
   const [values, setValues] = useState({
@@ -42,8 +42,8 @@ export default function NewProfessional() {
       );
 
       console.log(JSON.stringify(response));
-      const accessToken = response?.data?.accessToken;
-      const roles = response?.data?.roles;
+
+      console.log(response);
     } catch (err) {
       if (!err?.response) {
         console.log("No Server Response");
@@ -52,7 +52,7 @@ export default function NewProfessional() {
       } else if (err.response?.status === 401) {
         console.log("Unauthorized");
       } else {
-        console.log("Login Failed");
+        console.log("something else is wrong");
       }
     }
   };
@@ -87,6 +87,15 @@ export default function NewProfessional() {
               type="email"
               name="email"
               placeholder="john@gmail.com"
+              onChange={onChange}
+            />
+          </div>
+          <div className="newProfessionalItem">
+            <label>Password</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="*********"
               onChange={onChange}
             />
           </div>
