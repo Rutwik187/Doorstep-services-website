@@ -2,12 +2,13 @@ import * as React from "react";
 import styles from "./dropdown.module.css";
 import { Cities } from "../../Data/CityData";
 
-export const Dropdown = () => {
+export const Dropdown = (props) => {
   const [value, setValue] = React.useState("Mumbai");
 
   const handleChange = (event) => {
     setValue(event.target.value);
   };
+  props.selectedCity(value);
 
   return (
     <div>

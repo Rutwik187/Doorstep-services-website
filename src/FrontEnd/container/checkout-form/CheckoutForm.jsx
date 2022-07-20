@@ -2,41 +2,113 @@ import { Dropdown } from "../../components/dropdown/Dropdown";
 import styles from "./checkoutForm.module.css";
 import { Cities } from "../../Data/CityData";
 import { useParams } from "react-router-dom";
+import axios from "../../api/axios";
+import { useState } from "react";
+
+const CHECKOUT_FORM_URL = "/createCheckout";
 
 const CheckoutForm = () => {
-  const { service } = useParams();
-  console.log(service);
+  // const { service } = useParams();
+  const service = "barber";
+
+  const [childData, setChildData] = useState(""); // childData is used to get data from dropdown
+
+  const [values, setValues] = useState({
+    fullName: "",
+    email: "",
+    serviceDate: "",
+    address: "",
+    note: "",
+    phoneNumber: "",
+  });
+
+  const onChange = (e) => {
+    setValues({ ...values, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    console.log(values.fullName);
+    e.preventDefault();
+
+    try {
+      const response = await axios.post(
+        CHECKOUT_FORM_URL,
+        JSON.stringify({
+          fullName: values.fullName,
+          email: values.email,
+          serviceName: service,
+          serviceDate: values.serviceDate,
+          address: values.address,
+          city: childData,
+          note: values.note,
+          phoneNumber: values.phoneNumber,
+        }),
+        {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: false,
+        }
+      );
+
+      console.log(JSON.stringify(response));
+
+      console.log(response);
+    } catch (err) {
+      if (!err?.response) {
+        console.log("No Server Response");
+      } else if (err.response?.status === 400) {
+        console.log("Bad Request");
+      } else if (err.response?.status === 401) {
+        console.log("Unauthorized");
+      } else {
+        console.log("something else is wrong");
+      }
+    }
+  };
+
   return (
     <>
       <section className={styles.hero}>
         <div className={styles.container}>
           <div className={styles.title}>Checkout Order</div>
           <div className={styles.content}>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className={styles["user-details"]}>
                 <div className={styles["input-box"]}>
                   <span className={styles.details}>Full Name</span>
-                  <input type="text" placeholder="Enter your name" required />
+                  <input
+                    type="text"
+                    name="fullName"
+                    placeholder="john Dear"
+                    onChange={onChange}
+                  />
                 </div>
                 <div className={styles["input-box"]}>
                   <span className={styles.details}>Phone Number</span>
                   <input
                     type="number"
-                    placeholder="Enter your number"
-                    required
+                    name="phoneNumber"
+                    placeholder="Enter your phone number"
+                    onChange={onChange}
                   />
                 </div>
                 <div className={styles["input-box"]}>
                   <span className={styles.details}>Email</span>
-                  <input type="text" placeholder="Enter your email" required />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    onChange={onChange}
+                  />
                 </div>
                 <div className={styles["input-box"]}>
                   <span className={styles.details}>Service Date</span>
-                  <input type="date" required />
+                  <input name="serviceDate" type="date" onChange={onChange} />
                 </div>
                 <div className={styles["input-box"]}>
                   <span className={styles.details}>Address</span>
                   <textarea
+                    name="address"
+                    onChange={onChange}
                     type="text"
                     placeholder="Enter your Address"
                     required
@@ -44,20 +116,19 @@ const CheckoutForm = () => {
                 </div>
                 <div className={styles["input-box"]}>
                   <span className={styles.details}>City</span>
-                  <Dropdown placeholder="Enter the City" data={Cities} />
-                </div>
-
-                <div className={styles["input-box"]}>
-                  <span className={styles.details}>Product Description</span>
-                  <input
-                    type="text"
-                    placeholder="Describe the product in detail"
-                    required
+                  <Dropdown
+                    name="city"
+                    selectedCity={(childData) => setChildData(childData)}
+                    // onChange={onChange}
+                    placeholder="Enter the City"
+                    data={Cities}
                   />
                 </div>
                 <div className={styles["input-box"]}>
                   <span className={styles.details}>Note</span>
                   <textarea
+                    name="note"
+                    onChange={onChange}
                     type="text"
                     placeholder="Describe the problem in detail"
                     required

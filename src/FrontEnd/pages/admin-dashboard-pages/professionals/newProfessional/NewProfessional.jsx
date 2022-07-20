@@ -22,6 +22,7 @@ export default function NewProfessional() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(values);
 
     try {
       const response = await axios.post(

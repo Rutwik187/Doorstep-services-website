@@ -5,28 +5,24 @@ import { userRows } from "../../../../Data/dummyData";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "../../../../api/axios";
+
 import Sidebar from "../../../../components/admin-dashboard/sidebar/Sidebar";
 
 export default function UserList() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(userRows);
 
   useEffect(() => {
-    const fetchUserData = async () => {
+    const fetchData = async () => {
       try {
-        const response = await axios.get("user/getUser");
-        setData(response.data);
+        const response = await axios.get("/admin/getProfessionals");
+        console.log(response.data);
+        console.log(response);
+        // setData(response.data);
       } catch (err) {
-        if (err.response) {
-          // Not in the 200 response range
-          console.log(err.response.data);
-          console.log(err.response.status);
-          console.log(err.response.headers);
-        } else {
-          console.log("Error", err);
-        }
+        console.log(err.message);
       }
     };
-    fetchUserData();
+    fetchData();
   }, []);
 
   const handleDelete = (id) => {
