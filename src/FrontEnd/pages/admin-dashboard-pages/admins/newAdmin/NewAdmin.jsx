@@ -41,17 +41,20 @@ export default function NewAdmin() {
       );
 
       console.log(JSON.stringify(response));
-
       console.log(response);
+
+      alert("New Admin Created!");
     } catch (err) {
       if (!err?.response) {
-        console.log("No Server Response");
+        alert("No Server Response");
       } else if (err.response?.status === 400) {
-        console.log("Missing Username or Password");
-      } else if (err.response?.status === 401) {
-        console.log("Unauthorized");
+        alert("Missing Values");
+      } else if (err.response?.status === 409) {
+        alert("Username, Phone or Email already exists!");
+      } else if (err.response?.status === 403) {
+        alert("You are Unauthorized");
       } else {
-        console.log("something else is wrong");
+        alert("Fail to Create Admin");
       }
     }
   };
@@ -69,6 +72,7 @@ export default function NewAdmin() {
               name="username"
               placeholder="john"
               onChange={onChange}
+              required
             />
           </div>
           <div className="newAdminItem">
@@ -78,6 +82,7 @@ export default function NewAdmin() {
               name="fullName"
               placeholder="John Smith"
               onChange={onChange}
+              required
             />
           </div>
           <div className="newAdminItem">
@@ -87,6 +92,7 @@ export default function NewAdmin() {
               name="email"
               placeholder="john@gmail.com"
               onChange={onChange}
+              required
             />
           </div>
           <div className="newAdminItem">
@@ -96,6 +102,7 @@ export default function NewAdmin() {
               name="password"
               placeholder="*********"
               onChange={onChange}
+              required
             />
           </div>
           <div className="newAdminItem">
@@ -105,6 +112,7 @@ export default function NewAdmin() {
               name="phone"
               placeholder="+91 0000000000"
               onChange={onChange}
+              required
             />
           </div>
 

@@ -72,13 +72,13 @@ export const SignIn = () => {
       localStorage.setItem("response", JSON.stringify(userDetails));
     } catch (err) {
       if (!err?.response) {
-        console.log("No Server Response");
+        alert("No Server Response");
       } else if (err.response?.status === 400) {
-        console.log("Missing Username or Password");
+        alert("Missing Username or Password");
       } else if (err.response?.status === 401) {
-        console.log("Unauthorized");
+        alert("Unauthorized");
       } else {
-        console.log("Login Failed");
+        alert("Login Failed");
       }
     }
   };
@@ -91,7 +91,7 @@ export const SignIn = () => {
     <>
       <div className="SignInSignUp">
         <form className="SignInSignUpForm" onSubmit={handleSubmit}>
-          <h4>Sign In</h4>
+          <div className="SignInSignUpTitle">Sign In</div>
           {inputs.map((input) => (
             <FormInput
               key={input.id}

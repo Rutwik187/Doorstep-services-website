@@ -129,7 +129,7 @@ export const Navbar = () => {
                     <Link to="/SignIn">Sign in</Link>
                   )}
                 </p>
-                <p
+                <div
                   onClick={() => setToggleMenu(false)}
                   className={navbarStyles.logout}
                 >
@@ -140,7 +140,7 @@ export const Navbar = () => {
                       <p>Sign up</p>
                     </Link>
                   )}
-                </p>
+                </div>
               </div>
               <div
                 onClick={() => setToggleMenu(false)}

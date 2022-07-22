@@ -83,6 +83,7 @@ const CheckoutForm = () => {
                     name="fullName"
                     placeholder="john Dear"
                     onChange={onChange}
+                    required
                   />
                 </div>
                 <div className={styles["input-box"]}>
@@ -92,6 +93,7 @@ const CheckoutForm = () => {
                     name="phoneNumber"
                     placeholder="Enter your phone number"
                     onChange={onChange}
+                    required
                   />
                 </div>
                 <div className={styles["input-box"]}>
@@ -101,11 +103,17 @@ const CheckoutForm = () => {
                     name="email"
                     placeholder="Enter your email"
                     onChange={onChange}
+                    required
                   />
                 </div>
                 <div className={styles["input-box"]}>
                   <span className={styles.details}>Service Date</span>
-                  <input name="serviceDate" type="date" onChange={onChange} />
+                  <input
+                    name="serviceDate"
+                    type="date"
+                    onChange={onChange}
+                    required
+                  />
                 </div>
                 <div className={styles["input-box"]}>
                   <span className={styles.details}>Address</span>
@@ -125,6 +133,7 @@ const CheckoutForm = () => {
                     // onChange={onChange}
                     placeholder="Enter the City"
                     data={Cities}
+                    required
                   />
                 </div>
                 <div className={styles["input-box"]}>

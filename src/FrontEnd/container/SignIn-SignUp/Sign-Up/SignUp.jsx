@@ -2,10 +2,12 @@ import { useState } from "react";
 import "../CommonSignInSignUp.css";
 import { FormInput } from "../Form-Inputs/FormInput";
 import axios from "../../../api/axios";
+import { useNavigate } from "react-router-dom";
 
 const SIGN_UP_URL = "/user/register";
 
 export const SignUp = () => {
+  const navigate = useNavigate();
   // const [success, setSuccess] = useState(false);
   const [errMsg, setErrMsg] = useState("");
 
@@ -99,20 +101,28 @@ export const SignUp = () => {
           withCredentials: true,
         }
       );
+
+      alert("Successfully registered!");
+
+      navigate("/SignIn");
+
       console.log(response);
       console.log(response?.data);
       console.log(response?.accessToken);
       console.log(JSON.stringify(response));
     } catch (err) {
+      if (err?.response?.status === 400) {
+        alert(err?.response?.data?.message);
+      }
       if (!err?.response) {
         setErrMsg("No Server Response");
       } else if (err.response?.status === 409) {
-        setErrMsg("Username Taken");
+        setErrMsg("Username, Email or Phone No. already exists!");
       } else {
         setErrMsg("Registration Failed");
       }
     }
-    console.log(errMsg);
+    alert(errMsg);
   };
 
   const onChange = (e) => {
@@ -123,7 +133,7 @@ export const SignUp = () => {
     <section>
       <div className="SignInSignUp">
         <form className="SignInSignUpForm" onSubmit={handleSubmit}>
-          <h4>Sign Up</h4>
+          <div className="SignInSignUpTitle">Sign In</div>
           {inputs.map((input) => (
             <FormInput
               key={input.id}

@@ -48,11 +48,11 @@ export default function NewService() {
       if (!err?.response) {
         console.log("No Server Response");
       } else if (err.response?.status === 400) {
-        alert("Bad Request");
-      } else if (err.response?.status === 401) {
+        alert("Service already exists");
+      } else if (err.response?.status === 403) {
         alert("You are Unauthorized to perform this action");
       } else {
-        alert("something else is wrong");
+        alert("Unable to Create Service");
       }
     }
   };
@@ -70,6 +70,7 @@ export default function NewService() {
               onChange={onChange}
               type="text"
               placeholder="Electrician"
+              required
             />
           </div>
           <div className="addServiceItem">
@@ -86,6 +87,7 @@ export default function NewService() {
               onChange={onChange}
               type="number"
               placeholder="500"
+              required
             />
           </div>
           <button className="addServiceButton">Create</button>

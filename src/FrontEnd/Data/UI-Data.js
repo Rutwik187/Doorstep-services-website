@@ -54,35 +54,35 @@ export const stepsData = [
     {
         id: 'step_1',
         animation: 'fade-left',
-        text: 'Check if we offer services in your area by entering desc name',
+        text: 'Select your service which you want to book and proceed to Checkout.',
         step_no: 'Step 1',
     },
     {
         id: 'step_2',
         animation: 'fade-right',
-        text: 'Let us know what needs to be fixed and check for the service availability',
+        text: 'We will check if professionals are available for your service.',
         step_no: 'Step 2',
     },
     {
         id: 'step_3',
         animation: 'fade-left',
-        text: 'You can talk to the fixer you wish to work with & setup time',
+        text: 'Make the Payment using the payment method you prefer.',
         step_no: 'Step 3',
     },
     {
         id: 'step_4',
         animation: 'fade-right',
         text:
-            'Fixer arrives site. You will be astonished the work they can do for you',
+            'Our professionals will reach to you as soon as possible.',
         step_no: 'Step 4',
 
     },
-    {
-        id: 'step_5',
-        animation: 'fade-left',
-        text: 'We will send you the link to pay. You can pay via paypal or card',
-        step_no: 'Step 5',
-    }
+    // {
+    //     id: 'step_5',
+    //     animation: 'fade-left',
+    //     text: 'We will send you the link to pay. You can pay via paypal or card',
+    //     step_no: 'Step 5',
+    // }
 ]
 
 export const AccordionData = [
