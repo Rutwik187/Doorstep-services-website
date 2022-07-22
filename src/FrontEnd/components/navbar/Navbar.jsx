@@ -106,26 +106,41 @@ export const Navbar = () => {
                   </Link>
                 </p>
                 <p>
-                  <Link to="/admin-dashboard">Admin Dashboard</Link>
+                  {data.role === "admin" ? (
+                    <Link to="/admin-dashboard">Admin Dashboard</Link>
+                  ) : data.role === "professional" ? (
+                    <Link to="/under-construction">Professional Dashboard</Link>
+                  ) : (
+                    <Link to="/under-construction">User Dashboard</Link>
+                  )}
                 </p>
                 <p>
                   <Link to="/ContactUs">Contact Us</Link>
                 </p>
               </div>
               <div className={navbarStyles.navbar_menu_container_links_sign}>
-                <Link to="/SignIn">
-                  <p>Sign in</p>
-                </Link>
-                <Link to="/SignUp">
-                  <button type="button">Sign up</button>
-                </Link>
+                <p className={navbarStyles.signIn}>
+                  {data.role ? (
+                    data.fullName
+                  ) : (
+                    <Link to="/SignIn">Sign in</Link>
+                  )}
+                </p>
+                <p className={navbarStyles.logout}>
+                  {data.role ? (
+                    <p onClick={handleLogout}>Logout</p>
+                  ) : (
+                    <Link to="/SignUp">
+                      <p>Sign up</p>
+                    </Link>
+                  )}
+                </p>
               </div>
-              <div className={navbarStyles.circular_close_button}>
-                <RiCloseLine
-                  color="#ffffff"
-                  size={35}
-                  onClick={() => setToggleMenu(false)}
-                />
+              <div
+                onClick={() => setToggleMenu(false)}
+                className={navbarStyles.navbar_close_button}
+              >
+                <RiCloseLine size={40} />
               </div>
             </div>
           </div>
