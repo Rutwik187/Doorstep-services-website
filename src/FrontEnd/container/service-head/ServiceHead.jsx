@@ -14,7 +14,7 @@ export const ServiceHead = (props) => {
         </div>
       </div>
       <div className={ServiceHeadStyles.serviceHead_container_button}>
-        <Link to={`/checkout/${props.title}`}>
+        <Link to={`/checkout/${props.category}/${props.title}`}>
           <button className="button">Book Service</button>
         </Link>
       </div>

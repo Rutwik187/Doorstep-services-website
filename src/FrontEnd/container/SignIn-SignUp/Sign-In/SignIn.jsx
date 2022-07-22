@@ -1,7 +1,7 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import "../CommonSignInSignUp.css";
 import { FormInput } from "../Form-Inputs/FormInput";
-import AuthContext from "../../../context/AuthProvider";
+// import AuthContext from "../../../context/AuthProvider";
 import { useNavigate } from "react-router-dom";
 
 import axios from "../../../api/axios";
@@ -9,9 +9,7 @@ const LOGIN_URL = "/login";
 
 export const SignIn = () => {
   const navigate = useNavigate();
-  const { setAuth } = useContext(AuthContext);
-
-  const [success, setSuccess] = useState(false);
+  // const { setAuth } = useContext(AuthContext);
 
   const [values, setValues] = useState({
     email: "",
@@ -48,7 +46,6 @@ export const SignIn = () => {
       const response = await axios.post(
         LOGIN_URL,
         JSON.stringify({ email: values.email, password: values.password }),
-
         {
           headers: { "Content-Type": "application/json" },
           withCredentials: true,
@@ -57,20 +54,22 @@ export const SignIn = () => {
 
       console.log(JSON.stringify(response));
       navigate("/");
-      const token = response?.data?.token;
-      const role = response.data.user.role;
-      console.log(token);
-      console.log(role);
+      window.location.reload();
 
-      // localStorage.setItem("token", token);
-      // localStorage.setItem("role", role);
-      const roles = response?.data?.roles;
-      setAuth({
+      const { fullName, role } = response.data.user;
+
+      // setAuth({
+      //   email: values.email,
+      //   role,
+      //   fullName,
+      // });
+
+      const userDetails = {
         email: values.email,
-        password: values.password,
-        token,
-      });
-      setSuccess(true);
+        role,
+        fullName,
+      };
+      localStorage.setItem("response", JSON.stringify(userDetails));
     } catch (err) {
       if (!err?.response) {
         console.log("No Server Response");
@@ -90,30 +89,20 @@ export const SignIn = () => {
 
   return (
     <>
-      {success ? (
-        <section>
-          <h1>You are logged in!</h1>
-          <br />
-          <p>
-            <p>Go to Home</p>
-          </p>
-        </section>
-      ) : (
-        <div className="SignInSignUp">
-          <form className="SignInSignUpForm" onSubmit={handleSubmit}>
-            <h4>Sign In</h4>
-            {inputs.map((input) => (
-              <FormInput
-                key={input.id}
-                {...input}
-                value={values[input.name]}
-                onChange={onChange}
-              />
-            ))}
-            <button className="SignInSignUpButton">Submit</button>
-          </form>
-        </div>
-      )}
+      <div className="SignInSignUp">
+        <form className="SignInSignUpForm" onSubmit={handleSubmit}>
+          <h4>Sign In</h4>
+          {inputs.map((input) => (
+            <FormInput
+              key={input.id}
+              {...input}
+              value={values[input.name]}
+              onChange={onChange}
+            />
+          ))}
+          <button className="SignInSignUpButton">Submit</button>
+        </form>
+      </div>
     </>
   );
 };

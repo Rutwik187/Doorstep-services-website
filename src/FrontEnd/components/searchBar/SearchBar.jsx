@@ -3,7 +3,7 @@ import SearchBarStyles from "./SearchBar.module.css";
 import { Link } from "react-router-dom";
 import { AiOutlineClose, AiOutlineSearch } from "react-icons/ai";
 
-export const SearchBar = ({ placeholder, data }) => {
+export const SearchBar = ({ placeholder, data, name }) => {
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
 
@@ -21,6 +21,10 @@ export const SearchBar = ({ placeholder, data }) => {
       setFilteredData(newFilter);
     }
   };
+
+  // const handleLocationOnClick = (event) => {
+  //   const value = value.desc;
+  // };
 
   const clearInput = () => {
     setFilteredData([]);
@@ -54,9 +58,23 @@ export const SearchBar = ({ placeholder, data }) => {
         <div className={SearchBarStyles.dataResult}>
           {filteredData.map((value) => {
             return (
-              <Link to={`categories/${value.category}/${value.id}`}>
-                <p className={SearchBarStyles.result}>{value.desc}</p>
-              </Link>
+              <>
+                {name === "location" ? (
+                  <p
+                    onClick={() => {
+                      setWordEntered(value.desc);
+                      setFilteredData([]);
+                    }}
+                    className={SearchBarStyles.result}
+                  >
+                    {value.desc}
+                  </p>
+                ) : (
+                  <Link to={`categories/${value.category}/${value.id}`}>
+                    <p className={SearchBarStyles.result}>{value.desc}</p>
+                  </Link>
+                )}
+              </>
             );
           })}
         </div>

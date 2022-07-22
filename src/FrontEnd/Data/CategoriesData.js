@@ -21,7 +21,7 @@ export const categoriesData = [
         id: "appliance_repair",
         icon_img: appliance_repair_icon,
         img: appliance_repair,
-        desc: 'Appliance  Repair',
+        desc: 'Appliance Repair',
     },
     {
         id: "electrician",

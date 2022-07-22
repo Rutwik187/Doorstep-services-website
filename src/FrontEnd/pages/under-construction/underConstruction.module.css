@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css?family=Poiret+One|Source+Sans+Pro");
+
+.under_construction_container {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main {
+  text-align: center;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-family: "Poiret One", cursive;
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.sub_title {
+  border-top: 0.1rem solid #fff;
+  padding: 1rem 4rem;
+  text-align: center;
+}

@@ -15,19 +15,19 @@ import { SignIn } from './container/SignIn-SignUp/Sign-In/SignIn';
 
 import { ApplianceRepair, Electrician, Plumbing, HouseCleaning, BeautyAndSpa, OnlineInstructor, EventManagement, Business } from './pages/Services/AllServices';
 
-import { AcRepairCheckout, MicrowaveRepairCheckout, RefrigeratorRepairCheckout, WashingMachineRepairCheckout, HouseholdApplianceRepairCheckout, MixerGrinderRepairCheckout, DishwasherRepairCheckout } from './pages/Checkout/appliance-repair/ApplianceRepairCheckout';
+import { AcRepairCheckout, MicrowaveRepairCheckout, RefrigeratorRepairCheckout, WashingMachineRepairCheckout, HouseholdApplianceRepairCheckout, MixerGrinderRepairCheckout, DishwasherRepairCheckout } from './pages/service-details-pages/appliance-repair/ApplianceRepairCheckout';
 
-import { Fan, Switchboard, Fuse, NewInternalWiring, InverterServicing, LightFitting, CCTVCamera, Doorbell } from './pages/Checkout/electrician/ElectricianCheckout'
+import { Fan, Switchboard, Fuse, NewInternalWiring, InverterServicing, LightFitting, CCTVCamera, Doorbell } from './pages/service-details-pages/electrician/ElectricianCheckout'
 
-import { WaterTank, TabAndMixer, BasinAndSink, ToiletAndBathroom, WaterLeakage, WholeHousePlumbing } from './pages/Checkout/plumbing/PlumbingCheckout';
+import { WaterTank, TabAndMixer, BasinAndSink, ToiletAndBathroom, WaterLeakage, WholeHousePlumbing } from './pages/service-details-pages/plumbing/PlumbingCheckout';
 
-import { PestControl, BathroomCleaning, CarpetCleaning, DustCleaning, FurnitureCleaning, HouseDeepCleaning, HousePainting, KitchenDeepCleaning, SweepingAndMopping } from './pages/Checkout/house-cleaning/HouseCleaning';
+import { PestControl, BathroomCleaning, CarpetCleaning, DustCleaning, FurnitureCleaning, HouseDeepCleaning, HousePainting, KitchenDeepCleaning, SweepingAndMopping } from './pages/service-details-pages/house-cleaning/HouseCleaning';
 
-import { HairSalonForMen, HairStylingForWomen, MakeupAndFaceCare, MassageAndTherapy, SkinCare } from './pages/Checkout/beauty-and-spa/BeautyAndSpa';
+import { HairSalonForMen, HairStylingForWomen, MakeupAndFaceCare, MassageAndTherapy, SkinCare } from './pages/service-details-pages/beauty-and-spa/BeautyAndSpa';
 
-import { CAForBusiness, BusinessConsultancy, GST, TaxPlanning } from './pages/Checkout/business/Business';
-import { CompleteEventManagement, Decoration, EventPlanning, FoodAndCatering, MusicAndSound, Photography } from './pages/Checkout/event-management/EventManagement';
-import { Coding, CookingAndBaking, FitnessAndGym, HealthAndDiet, MusicInstructor, TuitionForKids } from './pages/Checkout/online-instructor/OnlineInstructor';
+import { CAForBusiness, BusinessConsultancy, GST, TaxPlanning } from './pages/service-details-pages/business/Business';
+import { CompleteEventManagement, Decoration, EventPlanning, FoodAndCatering, MusicAndSound, Photography } from './pages/service-details-pages/event-management/EventManagement';
+import { Coding, CookingAndBaking, FitnessAndGym, HealthAndDiet, MusicInstructor, TuitionForKids } from './pages/service-details-pages/online-instructor/OnlineInstructor';
 
 // pages for admin dashboard
 
@@ -44,7 +44,10 @@ import NewProfessional from "./pages/admin-dashboard-pages/professionals/newProf
 import AdminList from "./pages/admin-dashboard-pages/admins/adminList/AdminList";
 import Admin from "./pages/admin-dashboard-pages/admins/admin/Admin";
 import NewAdmin from "./pages/admin-dashboard-pages/admins/newAdmin/NewAdmin";
-import CheckoutForm from './container/checkout-form/CheckoutForm';
+import CheckoutForm from './pages/checkout-form/CheckoutForm';
+import Error from './pages/Error Page/Error';
+import UnderConstruction from './pages/under-construction/UnderConstruction';
+import Success from './pages/Success/Success';
 
 
 function App() {
@@ -58,7 +61,7 @@ function App() {
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Categories" element={<ServicesCategories />} />
         <Route path="/Contact-Us" element={<ContactUs />} />
-        <Route path="/checkout/:service" element={<CheckoutForm />} />
+        <Route path="/checkout/:category/:service" element={<CheckoutForm />} />
         <Route path="/Orders" element={<ClientOrders />} />
         <Route path="/admin-dashboard" element={<AdminHome />} />
 
@@ -151,7 +154,9 @@ function App() {
 
         <Route path="/RegisterAsProfessional" element={<RegisterAsProfessional />} />
         <Route path="/ContactUs" element={<ContactUs />} />
-        <Route path="*" element={<h2>Error:404 Cant find this page</h2>} />
+        <Route path="*" element={<Error />} />
+        <Route path="/under-construction" element={<UnderConstruction />} />
+        <Route path="/success.html" element={<Success />} />
       </Routes>
 
       <Footer />

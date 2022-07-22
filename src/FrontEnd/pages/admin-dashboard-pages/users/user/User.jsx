@@ -16,7 +16,7 @@ export default function User() {
       <Sidebar />
       <div className="user">
         <div className="userTitleContainer">
-          <h1 className="userTitle">Edit User</h1>
+          <h3 className="userTitle">Edit User</h3>
         </div>
         <div className="userContainer">
           <div className="userShow">

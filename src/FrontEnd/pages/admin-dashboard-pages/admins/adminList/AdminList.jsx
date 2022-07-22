@@ -1,13 +1,30 @@
 import "./adminList.css";
 import { DataGrid } from "@mui/x-data-grid";
 import { DeleteOutline } from "@mui/icons-material";
-import { adminRows } from "../../../../Data/dummyData";
+// import { adminRows } from "../../../../Data/dummyData";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Sidebar from "../../../../components/admin-dashboard/sidebar/Sidebar";
+import axios from "../../../../api/axios";
 
 export default function AdminList() {
-  const [data, setData] = useState(adminRows);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("/admin/getAdmins", {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: true,
+        });
+        console.log(response.data);
+        setData(response.data.admins);
+      } catch (err) {
+        console.log(err.message);
+      }
+    };
+    fetchData();
+  }, []);
 
   const handleDelete = (id) => {
     setData(data.filter((item) => item.id !== id));
@@ -16,19 +33,20 @@ export default function AdminList() {
   const columns = [
     { field: "id", headerName: "ID", width: 90 },
     {
-      field: "admin",
-      headerName: "admin",
-      width: 300,
+      field: "fullName",
+      headerName: "Admin Name",
+      width: 250,
       renderCell: (params) => {
         return (
           <div>
-            <img className="adminListImg" src={params.row.avatar} alt="" />
-            {params.row.username}
+            {/* <img className="adminListImg" src={params.row.avatar} alt="" /> */}
+            {params.row.fullName}
           </div>
         );
       },
     },
-    { field: "email", headerName: "Email", width: 200 },
+    { field: "email", headerName: "Email", width: 250 },
+    { field: "phoneNo", headerName: "Phone No.", width: 200 },
     {
       field: "role",
       headerName: "Role",
@@ -54,6 +72,25 @@ export default function AdminList() {
     },
   ];
 
+  const rows = data.map((row) => ({
+    id: row._id,
+    fullName: row.fullName,
+    email: row.email,
+    phoneNo: row.phoneNo,
+    role: row.role,
+    action: (
+      <>
+        <Link to={"/professional/" + row._id}>
+          <button className="professionalListEdit">Edit</button>
+        </Link>
+        <DeleteOutline
+          className="professionalListDelete"
+          onClick={() => handleDelete(row._id)}
+        />
+      </>
+    ),
+  }));
+
   return (
     <div className="adminListContainer">
       <div className="sidebar-container">
@@ -64,10 +101,11 @@ export default function AdminList() {
             sx={{
               fontSize: "1.5rem",
             }}
-            rows={data}
+            rows={rows}
             disableSelectionOnClick
             columns={columns}
             pageSize={10}
+            rowsPerPageOptions={[8]}
             checkboxSelection
           />
         </div>

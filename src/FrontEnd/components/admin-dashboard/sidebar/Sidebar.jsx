@@ -24,6 +24,7 @@ export default function Sidebar() {
               <li className="sidebarListItem active">
                 <LineStyle className="sidebarIcon" />
                 Home
+                
               </li>
             </Link>
             <li className="sidebarListItem">

@@ -1,6 +1,9 @@
 import shield from "../assets/icons/quality-badge.svg";
 import headphone from "../assets/icons/thumbs-up.svg";
 import thumbsUp from "../assets/icons/handshake.svg";
+import avatar1 from "../assets/Images/testimonial-1.jpg";
+import avatar2 from "../assets/Images/testimonial-2.jpg";
+import avatar3 from "../assets/Images/testimonial-3.jpg";
 
 export const featureItems = [
     {
@@ -27,23 +30,23 @@ export const testimonials = [
     {
         id: 'testimonial_1',
         swiperId: 'SwiperTestimonial_1',
-        name: 'John Doe',
+        name: 'Prashant',
         comment: 'Very good service, very friendly and professional. They are polite and highly skilled I recommend them to anyone.',
-        avatar: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
+        avatar: avatar1
     },
     {
         id: 'testimonial_2',
         swiperId: 'SwiperTestimonial_2',
-        name: 'Prashant',
+        name: 'Yash',
         comment: 'Fast and friendly service.Professionals here are very skilled and serious about their work. I recommend them to anyone.',
-        avatar: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
+        avatar: avatar2
     },
     {
         id: 'testimonial_3',
         swiperId: 'SwiperTestimonial_3',
-        name: 'Yash',
+        name: 'Rajesh',
         comment: 'super fast service. They reached at the door at very next day I ordered it. I Highly recommend them to anyone.',
-        avatar: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
+        avatar: avatar3
     }
 ]
 

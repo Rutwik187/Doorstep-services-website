@@ -44,6 +44,7 @@
   font-size: 18px;
 }
 .image img {
+  object-fit: cover;
   background-color: tomato;
   height: 120px;
   width: 120px;

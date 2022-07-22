@@ -8,8 +8,8 @@ import { useState } from "react";
 const CHECKOUT_FORM_URL = "/createCheckout";
 
 const CheckoutForm = () => {
-  // const { service } = useParams();
-  const service = "barber";
+  const { category } = useParams();
+  const { service } = useParams();
 
   const [childData, setChildData] = useState(""); // childData is used to get data from dropdown
 
@@ -27,7 +27,7 @@ const CheckoutForm = () => {
   };
 
   const handleSubmit = async (e) => {
-    console.log(values.fullName);
+    console.log(values);
     e.preventDefault();
 
     try {
@@ -36,18 +36,21 @@ const CheckoutForm = () => {
         JSON.stringify({
           fullName: values.fullName,
           email: values.email,
-          serviceName: service,
+          serviceName: category,
           serviceDate: values.serviceDate,
           address: values.address,
           city: childData,
           note: values.note,
           phoneNumber: values.phoneNumber,
+          serviceDesc: service,
         }),
         {
           headers: { "Content-Type": "application/json" },
-          withCredentials: false,
+          withCredentials: true,
         }
       );
+
+      window.open(`${response.data.url}`, "_blank");
 
       console.log(JSON.stringify(response));
 
@@ -56,7 +59,7 @@ const CheckoutForm = () => {
       if (!err?.response) {
         console.log("No Server Response");
       } else if (err.response?.status === 400) {
-        console.log("Bad Request");
+        alert("Professionals not available for selected location");
       } else if (err.response?.status === 401) {
         console.log("Unauthorized");
       } else {

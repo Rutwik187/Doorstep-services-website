@@ -1,17 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Outlet, Link } from "react-router-dom";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import logo from "../../assets/icons/logo.png";
 import navbarStyles from "./navbar.module.css";
+import { useNavigate } from "react-router-dom";
+// import axios from "../../api/axios";
+// import { useContext } from "react";
+// import AuthContext from "../../context/AuthProvider";
 
 export const Navbar = () => {
+  // const { auth } = useContext(AuthContext);
   const [toggleMenu, setToggleMenu] = useState(false);
+  const [data, setData] = useState({});
+
+  // Data is passed in local storage from sign in form
+  useEffect(() => {
+    const response = localStorage.getItem("response");
+    if (response) {
+      setData(JSON.parse(response));
+    }
+  }, []);
+
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    navigate("/");
+    localStorage.removeItem("response");
+    window.location.reload();
+  };
 
   return (
     <div className={navbarStyles.navbar}>
       <div className={navbarStyles.navbar_links_logo}>
         <img src={logo} alt="logo" />
       </div>
+
       <div className={navbarStyles.navbar_links}>
         <div className={navbarStyles.navbar_links_container}>
           <p>
@@ -24,20 +46,33 @@ export const Navbar = () => {
             <Link to="/RegisterAsProfessional">Register As Professional</Link>
           </p>
           <p>
-            <Link to="/admin-dashboard">Admin Dashboard</Link>
+            {data.role === "admin" ? (
+              <Link to="/admin-dashboard">Admin Dashboard</Link>
+            ) : data.role === "professional" ? (
+              <Link to="/under-construction">Professional Dashboard</Link>
+            ) : (
+              <Link to="/under-construction">User Dashboard</Link>
+            )}
           </p>
           <p>
             <Link to="/ContactUs">Contact Us</Link>
           </p>
         </div>
       </div>
+
       <div className={navbarStyles.navbar_sign}>
-        <p>
-          <Link to="/SignIn">Sign in</Link>
+        <p className={navbarStyles.signIn}>
+          {data.role ? data.fullName : <Link to="/SignIn">Sign in</Link>}
         </p>
-        <Link to="/SignUp">
-          <button type="button">Sign up</button>
-        </Link>
+        <p className={navbarStyles.logout}>
+          {data.role ? (
+            <p onClick={handleLogout}>Logout</p>
+          ) : (
+            <Link to="/SignUp">
+              <p>Sign up</p>
+            </Link>
+          )}
+        </p>
       </div>
       <div className={navbarStyles.navbar_menu}>
         {toggleMenu ? (
