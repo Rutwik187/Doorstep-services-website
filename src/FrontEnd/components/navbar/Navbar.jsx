@@ -94,18 +94,18 @@ export const Navbar = () => {
               className={`${navbarStyles.navbar_menu_container} ${navbarStyles.scale_up_center}`}
             >
               <div className={navbarStyles.navbar_menu_container_links}>
-                <p>
+                <p onClick={() => setToggleMenu(false)}>
                   <Link to="/">Home</Link>
                 </p>
-                <p>
+                <p onClick={() => setToggleMenu(false)}>
                   <Link to="/Categories">Categories</Link>
                 </p>
-                <p>
+                <p onClick={() => setToggleMenu(false)}>
                   <Link to="/RegisterAsProfessional">
                     Register As Professional
                   </Link>
                 </p>
-                <p>
+                <p onClick={() => setToggleMenu(false)}>
                   {data.role === "admin" ? (
                     <Link to="/admin-dashboard">Admin Dashboard</Link>
                   ) : data.role === "professional" ? (
@@ -114,19 +114,25 @@ export const Navbar = () => {
                     <Link to="/under-construction">User Dashboard</Link>
                   )}
                 </p>
-                <p>
+                <p onClick={() => setToggleMenu(false)}>
                   <Link to="/ContactUs">Contact Us</Link>
                 </p>
               </div>
               <div className={navbarStyles.navbar_menu_container_links_sign}>
-                <p className={navbarStyles.signIn}>
+                <p
+                  onClick={() => setToggleMenu(false)}
+                  className={navbarStyles.signIn}
+                >
                   {data.role ? (
                     data.fullName
                   ) : (
                     <Link to="/SignIn">Sign in</Link>
                   )}
                 </p>
-                <p className={navbarStyles.logout}>
+                <p
+                  onClick={() => setToggleMenu(false)}
+                  className={navbarStyles.logout}
+                >
                   {data.role ? (
                     <p onClick={handleLogout}>Logout</p>
                   ) : (

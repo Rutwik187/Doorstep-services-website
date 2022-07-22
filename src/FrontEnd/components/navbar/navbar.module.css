@@ -53,6 +53,12 @@
   border-radius: var(--border-radius);
   transition-duration: 0.3s;
 }
+.logout {
+  background-color: var(--primary-color);
+}
+.logout p {
+  color: white;
+}
 .signIn:hover {
   background-color: var(--primary-color);
   color: white;
