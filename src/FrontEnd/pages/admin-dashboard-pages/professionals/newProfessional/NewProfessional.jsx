@@ -41,6 +41,7 @@ export default function NewProfessional() {
           withCredentials: true,
         }
       );
+      alert(`${values.username} has been added to the database`);
 
       console.log(JSON.stringify(response));
 
@@ -49,7 +50,7 @@ export default function NewProfessional() {
       if (!err?.response) {
         alert("No Server Response");
       } else if (err.response?.status === 400) {
-        alert("Missing Values");
+        alert("Service Does Not Exist");
       } else if (err.response?.status === 409) {
         alert("Username, Phone or Email already exists!");
       } else if (err.response?.status === 403) {
@@ -71,7 +72,7 @@ export default function NewProfessional() {
             <input
               type="text"
               name="username"
-              placeholder="john"
+              placeholder="Enter Username"
               onChange={onChange}
               required
             />
@@ -81,7 +82,7 @@ export default function NewProfessional() {
             <input
               type="text"
               name="fullName"
-              placeholder="John Smith"
+              placeholder="Enter Full Name"
               onChange={onChange}
               required
             />
@@ -91,7 +92,7 @@ export default function NewProfessional() {
             <input
               type="email"
               name="email"
-              placeholder="john@gmail.com"
+              placeholder="Enter Email"
               onChange={onChange}
               required
             />
@@ -101,7 +102,7 @@ export default function NewProfessional() {
             <input
               type="password"
               name="password"
-              placeholder="*********"
+              placeholder="Enter Password"
               onChange={onChange}
               required
             />
@@ -111,7 +112,7 @@ export default function NewProfessional() {
             <input
               type="text"
               name="phone"
-              placeholder="+91 0000000000"
+              placeholder="Enter Phone Number"
               onChange={onChange}
               required
             />
@@ -121,7 +122,7 @@ export default function NewProfessional() {
             <input
               type="text"
               name="location"
-              placeholder="New York | USA"
+              placeholder="Enter City"
               onChange={onChange}
               required
             />
@@ -131,7 +132,7 @@ export default function NewProfessional() {
             <input
               type="text"
               name="serviceName"
-              placeholder="Barber"
+              placeholder="Enter Service Name"
               onChange={onChange}
               required
             />

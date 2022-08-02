@@ -26,7 +26,7 @@ export default function NewService() {
         JSON.stringify({
           name: values.name,
           active: "true",
-          price: values.price,
+          price: "100",
         }),
         {
           headers: { "Content-Type": "application/json" },
@@ -36,12 +36,6 @@ export default function NewService() {
 
       console.log(JSON.stringify(response));
       console.log(response);
-
-      setValues({
-        name: "",
-        active: "true",
-        price: "",
-      });
 
       alert(`${values.name} has been added to the database`);
     } catch (err) {
@@ -69,7 +63,7 @@ export default function NewService() {
               name="name"
               onChange={onChange}
               type="text"
-              placeholder="Electrician"
+              placeholder="Enter Category Name"
               required
             />
           </div>
@@ -86,7 +80,7 @@ export default function NewService() {
               name="price"
               onChange={onChange}
               type="number"
-              placeholder="500"
+              placeholder="Enter Price"
               required
             />
           </div>

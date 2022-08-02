@@ -50,7 +50,7 @@ const CheckoutForm = () => {
         }
       );
 
-      window.open(`${response.data.url}`, "_blank");
+      window.open(`${response.data.url}`);
 
       console.log(JSON.stringify(response));
 

@@ -8,8 +8,6 @@ export const RegisterAsProfessional = () => {
         <>
             <SalesAnalysis />
             <ContactForm />
-            <Accordion />
-
         </>
     )
 }

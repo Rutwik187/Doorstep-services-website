@@ -131,20 +131,18 @@ export const SignUp = () => {
 
   return (
     <section>
-      <div className="SignInSignUp">
-        <form className="SignInSignUpForm" onSubmit={handleSubmit}>
-          <div className="SignInSignUpTitle">Sign In</div>
-          {inputs.map((input) => (
-            <FormInput
-              key={input.id}
-              {...input}
-              value={values[input.name]}
-              onChange={onChange}
-            />
-          ))}
-          <button className="SignInSignUpButton">Submit</button>
-        </form>
-      </div>
+      <form className="SignInSignUpForm" onSubmit={handleSubmit}>
+        <div className="SignInSignUpTitle">Sign In</div>
+        {inputs.map((input) => (
+          <FormInput
+            key={input.id}
+            {...input}
+            value={values[input.name]}
+            onChange={onChange}
+          />
+        ))}
+        <button className="SignInSignUpButton">Submit</button>
+      </form>
     </section>
   );
 };
